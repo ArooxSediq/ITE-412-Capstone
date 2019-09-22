@@ -1,1 +1,0 @@
-Calender API: https://fullcalendar.io
