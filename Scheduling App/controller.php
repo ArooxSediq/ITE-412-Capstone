@@ -56,6 +56,20 @@ class controller
 
 	}
 
+	function getClasses()
+	{
+		$classes = array();
+
+		foreach ($this->data as $datum) 
+		{
+		  array_push($classes,  $datum['B']);
+		}
+
+		$classes = array_unique($classes);
+
+		return $classes;
+	}
+
 }//class controller()
 
 
