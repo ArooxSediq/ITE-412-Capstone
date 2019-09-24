@@ -52,21 +52,29 @@
       header: {
         left: 'prev,next today',
         center: 'title',
-        right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek'
+        right: 'timeGridWeek,timeGridDay,listWeek'
       },
       editable: true,
       droppable: true, // this allows things to be dropped onto the calendar
-      drop: function(arg) {
+       eventDrop: function(info) {
+        var date = info.event.title + " was dropped on " + info.event.start.toISOString();
+        console.log(date);
+      },
+      drop: function(dropInfo ) {
+        // alert(dropInfo.date );
         // is the "remove after drop" checkbox checked?
         if (document.getElementById('drop-remove').checked) {
           // if so, remove the element from the "Draggable Events" list
           arg.draggedEl.parentNode.removeChild(arg.draggedEl);
         }
       }
+
     });
     calendar.render();
 
-  });
+
+
+});
 
 </script>
 <style>
