@@ -1,6 +1,5 @@
 var events;
-
-var exams = [];
+let exams = [];
 
 
 
@@ -8,7 +7,7 @@ function onlyUnique(value, index, self) {
 return self.indexOf(value) === index;
 }
 
-function saveEvents()
+function saveExams()
 {
 	events = calendar.getEvents() ;
 
@@ -30,6 +29,6 @@ function saveEvents()
 		examData[events[i].start.toString().substring(0,15)].push(events[i].title); 
 	}
 
-	console.log(examData);
+	return examData;
 
 }
