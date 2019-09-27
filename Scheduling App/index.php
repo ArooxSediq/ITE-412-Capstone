@@ -58,24 +58,36 @@
         
       for (var i = 0; i < students.length; i++) 
       {
-     
+        
         for (var key in exams) 
         {
           var exam = exams[key];
+          var conflicts = [];
+          conflicts['number']=0;
+          conflicts['classes']=[];
+          conflicts['date']="";
+          
           for (var c = 0; c < exam.length; c++) {
               
-              const found = students[i].classes.find(function(element) 
-              {
-                // Why does this happen?
-                console.log("element: "+element+" exam: "+exam[c]);
-                if(element == exam[c]) console.log('nigger');
-                return element == exam[c];
+              const found = students[i].classes.find(function(element) {
+                return element.trim() == exam[c].trim() ;
               });
 
-              console.log(found);
+              if(found) 
+                {
+                  conflicts['number']++;
+                  conflicts['classes'].push(found);
+                  conflicts['date']=key;
+                }
 
           }
-     
+          
+          if(conflicts['number']>1)
+          {
+            console.log("Student with id: "+students[i].id+" has "+conflicts['number']+" exams on "+conflicts['date']+"\n the exams are: "+conflicts['classes']);
+
+          } 
+
         }
 
 
