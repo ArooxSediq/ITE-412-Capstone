@@ -32,8 +32,9 @@
       editable: true,
       droppable: true, // this allows things to be dropped onto the calendar
        eventDrop: function(info) {
-        var date = info.event.title + " was dropped on " + info.event.start.toISOString();
-        console.log(date);
+        // var date = info.event.title + " was dropped on " + info.event.start.toISOString();
+        // console.log(date);
+        console.clear();
       },
       drop: function(arg ) 
       {

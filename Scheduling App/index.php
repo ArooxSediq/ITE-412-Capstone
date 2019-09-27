@@ -16,7 +16,7 @@
   <div id='wrap'>
     <div id='external-events'>
 
-      <button onclick="Calculate();" class="btn">Calculate</button>
+      <button onclick="Calculate();" class="btn">Check students</button>
       <h4>Exams</h4>
 
       <div id='external-events-list'>
