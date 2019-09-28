@@ -1,6 +1,10 @@
 # ITE-412-Capstone
 <h3> Exam Scheduling Assitant </h3>
 
+<p>Author: Arukh Sediq Shkur </p>
+<p>Supervisor: Alan Amin </p>
+<p>The American University of Iraq, Slemani</p>
+
 # Introduction/Overview
 Creating an exam schedule is no easy task, especially in the real world
 where you have unpredictable situations for instance a student taking CSC101 and
@@ -36,3 +40,11 @@ relation to the students.
 easily modify the schedule.
 5. Giving suggestions based on the data on how to organise the current
 schedule.
+
+#Technologies
+HTML
+CSS
+JavaScript
+SQL
+PHP
+FullCalender.io
