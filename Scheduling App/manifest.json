@@ -1,0 +1,21 @@
+{
+  "short_name": "Scheduler",
+  "name": "Exam Scheduling Assistant",
+  "icons": [
+    {
+      "src": "img/logo.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "img/logo.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#0B4F6C",
+  "display": "standalone",
+  "scope": "/",
+  "theme_color": "#0B4F6C"
+}

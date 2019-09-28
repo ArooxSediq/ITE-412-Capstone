@@ -14,7 +14,7 @@
 
   #external-events {
 
-    height: 90vh;
+    height: 100vh;
     overflow-y: scroll;
     float: left;
     width: 150px;
@@ -43,7 +43,7 @@
 
 
   .btn{
-    margin-left: 50px;
+    margin-left: 2.5%;
     margin-bottom:10px;
   }
   #external-events p input {
