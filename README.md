@@ -41,7 +41,7 @@ easily modify the schedule.
 5. Giving suggestions based on the data on how to organise the current
 schedule.
 
-#Technologies
+# Technologies
 HTML
 CSS
 JavaScript
