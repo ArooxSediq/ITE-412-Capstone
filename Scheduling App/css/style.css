@@ -1,17 +1,21 @@
 
   body {
-    padding: 5%;
-    margin-top: 40px;
     font-size: 14px;
     font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
   }
 
   #wrap {
-    width: 1100px;
-    margin: 0 auto;
+
+    padding: 5%;
+    /*margin-top: 40px;*/
+    /*width: 1100px;*/
+    /*margin: 0 auto;*/
   }
 
   #external-events {
+
+    height: 90vh;
+    overflow-y: scroll;
     float: left;
     width: 150px;
     padding: 10px;
@@ -37,6 +41,11 @@
     color: #666;
   }
 
+
+  .btn{
+    margin-left: 50px;
+    margin-bottom:10px;
+  }
   #external-events p input {
     margin: 0;
     vertical-align: middle;
@@ -44,5 +53,20 @@
 
   #calendar {
     float: right;
-    width: 900px;
+    width: 85%;
+  }
+
+  .fc-title{
+    color: white;
+    font-weight: bold;
+  }
+
+
+  .fc-time > span{ 
+    color: white;
+  }
+
+
+  .fc-widget-content > span{
+    color: black;
   }

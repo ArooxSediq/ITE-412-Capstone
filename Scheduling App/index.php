@@ -14,11 +14,8 @@
 </head>
 <body>
   <div id='wrap'>
+    <button onclick="Calculate();" class="btn">Check students</button>
     <div id='external-events'>
-
-      <button onclick="Calculate();" class="btn">Check students</button>
-      <h4>Exams</h4>
-
       <div id='external-events-list'>
 
         <?php foreach ($classes as $class): ?>
@@ -35,6 +32,17 @@
 
     <div style='clear:both'></div>
 
+  </div>
+  <div class="col-12" style="background: #F8F8FF ;padding:10%;text-align: center;vertical-align: middle;">
+    
+    <img src="img/logo.png" width="50%">
+    
+    <br><br>
+
+    <p>Exam Scheduling Assistant</p> 
+    <br>
+    Developed by <a href="https://github.com/ArooxSediq">@aroox</a>
+    
   </div>
 </body>
   

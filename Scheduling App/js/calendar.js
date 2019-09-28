@@ -23,7 +23,15 @@
 
     var calendarEl = document.getElementById('calendar');
     calendar = new calendar(calendarEl, {
-      plugins: [ 'interaction', 'dayGrid', 'timeGrid', 'list' ],
+      plugins: [ 'interaction', 'dayGrid', 'timeGrid' ],
+       defaultView: 'timeGridFourDay',
+        views: {
+          timeGridFourDay: {
+            type: 'timeGrid',
+            duration: { days: 10 },
+            buttonText: '10 day'
+          }
+        },
       header: {
         left: 'prev,next today',
         center: 'title',
@@ -32,12 +40,9 @@
       editable: true,
       droppable: true, // this allows things to be dropped onto the calendar
        eventDrop: function(info) {
-        // var date = info.event.title + " was dropped on " + info.event.start.toISOString();
-        // console.log(date);
         console.clear();
       },
-      drop: function(arg ) 
-      {
+      drop: function(arg ) {
           arg.draggedEl.parentNode.removeChild(arg.draggedEl);
       }
 
