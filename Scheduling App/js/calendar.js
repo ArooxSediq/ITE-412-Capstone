@@ -42,13 +42,11 @@
        eventDrop: function(info) {
         if(document.getElementById('autocheck').checked)
         {       
-          console.clear();
           Calculate();
         }
       },
       drop: function(arg ) {
           arg.draggedEl.parentNode.removeChild(arg.draggedEl);
-        
       }
 
     });

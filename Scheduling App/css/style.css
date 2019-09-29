@@ -42,10 +42,11 @@
   }
 
 
-  .btn{
+  .btn-outline-success{
     margin-left: 2.5%;
     margin-bottom:10px;
   }
+
   #external-events p input {
     margin: 0;
     vertical-align: middle;
