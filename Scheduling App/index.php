@@ -49,6 +49,8 @@
 
     function Calculate()
     {
+      console.clear();
+      
       var conflict = [];
       var students = <?php echo json_encode($students); ?>;
       var exams = saveExams();
