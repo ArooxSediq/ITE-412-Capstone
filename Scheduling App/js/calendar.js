@@ -40,14 +40,15 @@
       editable: true,
       droppable: true, // this allows things to be dropped onto the calendar
        eventDrop: function(info) {
-        console.clear();
-        Calculate();
-
+        if(document.getElementById('autocheck').checked)
+        {       
+          console.clear();
+          Calculate();
+        }
       },
       drop: function(arg ) {
           arg.draggedEl.parentNode.removeChild(arg.draggedEl);
-          console.clear();
-          Calculate();
+        
       }
 
     });
