@@ -1,15 +1,14 @@
 var events;
 let exams = [];
 
-
 $(function () {
   $('[data-toggle="tooltip"]').tooltip()
 })
 
-
 function onlyUnique(value, index, self) { 
 return self.indexOf(value) === index;
 }
+
 
 function saveExams()
 {
@@ -20,7 +19,6 @@ function saveExams()
 		var examDate = events[i].start.toString().substring(0,15);
 		exams.push(examDate);
 	}	
-
 
 	var unique = exams.filter( onlyUnique ); // returns ['a', 1, 2, '1']
 
@@ -34,5 +32,50 @@ function saveExams()
 	}
 
 	return examData;
+
+}
+
+function save(events)
+{
+
+	var data =[];
+	var datum =[];
+
+	for (var i = 0; i < events.length; i++) 
+	{
+		datum[0] = events[i]['title'];
+		datum[1] = events[i]['start'];
+		datum[2] = events[i]['end'];
+		data.push(JSON.stringify(datum));
+	}
+	// console.log(data);
+	post('save.php',data);
+
+}
+
+
+function post(path, params, method='post') {
+
+  // The rest of this code assumes you are not using a library.
+  // It can be made less wordy if you use one.
+  const form = document.createElement('form');
+  form.method = method;
+  form.action = path;
+
+  for (const key in params) {
+    if (params.hasOwnProperty(key)) {
+
+      const hiddenField = document.createElement('input');
+      hiddenField.type = 'hidden';
+      hiddenField.name = key;
+      hiddenField.value = params[key];
+      console.log(params[key]);
+      form.appendChild(hiddenField);
+    }
+  }
+
+
+  document.body.appendChild(form);
+  form.submit();
 
 }

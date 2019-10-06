@@ -8,12 +8,12 @@
 
     <div class="col-12">
       <button onclick="Calculate();" class="btn btn-block btn-outline-info">Check students</button>     
-      <hr>            
+      <!-- <hr>             -->
     </div>
 
-    <div class="col-12" id="notify" style="background: white;  direction: ltr; justify-content: center; text-align: center;">
-    </div>
-    <hr>
+    <div class="col-12" style="height: 100px;padding: 5%;" id="notify"></div>
+
+    <!-- <hr> -->
     
     <div id='external-events'>
       <h3>Exams</h3>
@@ -30,7 +30,12 @@
     </div>
 
     <span style="padding-left: 4.5%;">Autocheck?</span>
-      <input type="checkbox" id="autocheck">  
+      <input type="checkbox" id="autocheck" checked>  
+
+    <button class="btn btn-outline-info" onclick="save(calendar.getEvents());">
+      Save
+    </button>
+
       <br><br>
     <div id='calendar'>
       
@@ -52,7 +57,7 @@
   </div>
 </body>
   
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
@@ -64,16 +69,20 @@
   <script type="text/javascript" src="js/calendar.js"></script>
   <script type="text/javascript" src="js/main.js"></script>
   <script type="text/javascript">
-    
+
+    var events = <?php echo json_encode($events); ?>;
+    // console.log(events);
+
     function Calculate()
     {
       $('#notify').empty();
+      console.clear();
 
       var conflict = [];
       var students = <?php echo json_encode($students); ?>;
       var exams = saveExams();
 
-        
+      
       for (var i = 0; i < students.length; i++) 
       {
         

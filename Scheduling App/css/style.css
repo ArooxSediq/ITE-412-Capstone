@@ -24,6 +24,9 @@
     text-align: left;
   }
 
+  #notify{
+    background: white;  direction: ltr; justify-content: center; text-align: center;
+  }
   #external-events h4 {
     font-size: 16px;
     margin-top: 0;

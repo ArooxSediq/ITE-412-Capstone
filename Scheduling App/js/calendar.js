@@ -7,14 +7,17 @@
     /* initialize the external events
     -----------------------------------------------------------------*/
 
+
     var containerEl = document.getElementById('external-events-list');
     new Draggable(containerEl, {
       itemSelector: '.fc-event',
       eventData: function(eventEl) {
         return {
-          title: eventEl.innerText.trim()
+
+        title: eventEl.innerText.trim()
         }
-      }
+      },
+
     });
 
 
@@ -25,11 +28,13 @@
     calendar = new calendar(calendarEl, {
       plugins: [ 'interaction', 'dayGrid', 'timeGrid' ],
        defaultView: 'timeGridFourDay',
+        events:{ duration: '02:00' },
         views: {
           timeGridFourDay: {
             type: 'timeGrid',
             duration: { days: 10 },
-            buttonText: '10 day'
+            buttonText: '10 day',
+
           }
         },
       header: {
@@ -38,7 +43,9 @@
         right: 'timeGridWeek,timeGridDay,listWeek'
       },
       editable: true,
-      droppable: true, // this allows things to be dropped onto the calendar
+      defaultTimedEventDuration: '02:00:00',
+      events: events ,
+      droppable: true, 
        eventDrop: function(info) {
         if(document.getElementById('autocheck').checked)
         {       
