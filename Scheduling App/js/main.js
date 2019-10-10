@@ -48,16 +48,12 @@ function save(events)
 		datum[2] = events[i]['end'];
 		data.push(JSON.stringify(datum));
 	}
-	// console.log(data);
 	post('save.php',data);
-
 }
 
 
 function post(path, params, method='post') {
 
-  // The rest of this code assumes you are not using a library.
-  // It can be made less wordy if you use one.
   const form = document.createElement('form');
   form.method = method;
   form.action = path;
@@ -69,7 +65,6 @@ function post(path, params, method='post') {
       hiddenField.type = 'hidden';
       hiddenField.name = key;
       hiddenField.value = params[key];
-      console.log(params[key]);
       form.appendChild(hiddenField);
     }
   }

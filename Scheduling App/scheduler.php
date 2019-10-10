@@ -35,6 +35,9 @@
     <button class="btn btn-outline-info" onclick="save(calendar.getEvents());">
       Save
     </button>
+    <a href="scheduler.php?reset=true" class="btn btn-outline-info">
+      Reset
+    </a>
 
       <br><br>
     <div id='calendar'>
@@ -71,7 +74,6 @@
   <script type="text/javascript">
 
     var events = <?php echo json_encode($events); ?>;
-    // console.log(events);
 
     function Calculate()
     {

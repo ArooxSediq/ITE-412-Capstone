@@ -29,6 +29,11 @@ class database
 		
 	}
 
+	function emptyCalendar()
+	{
+		$result =	$this->db->query("TRUNCATE table `events`;");
+	}
+
 	function fetch()
 	{
 
@@ -45,7 +50,7 @@ class database
 		} 
 
 		// die(var_dump($data));
-		$this->db->close();
+		// $this->db->close();
 		return $data;
 
 	}

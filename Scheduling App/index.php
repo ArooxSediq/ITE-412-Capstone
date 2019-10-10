@@ -5,7 +5,6 @@
 </head>
 <body>
 
-
 <div class="main">
   	
   <div class="col-12" style="justify-content: center; text-align: center; align-items: center; background: #f8f8ff; padding: 5%;">

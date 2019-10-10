@@ -1,6 +1,7 @@
   var calendar;
 
-  document.addEventListener('DOMContentLoaded', function() {
+  document.addEventListener('DOMContentLoaded', function()
+  {
     calendar = FullCalendar.Calendar;
     var Draggable = FullCalendarInteraction.Draggable
 
@@ -32,9 +33,7 @@
         views: {
           timeGridFourDay: {
             type: 'timeGrid',
-            duration: { days: 10 },
-            buttonText: '10 day',
-
+            duration: { days: 15 }
           }
         },
       header: {
@@ -58,4 +57,5 @@
 
     });
     calendar.render();
-});
+
+}); //end Dom Document loaded function

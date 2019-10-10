@@ -22,13 +22,12 @@ if(!isset($_SESSION['ExcelFile']))
 {
 	$target_dir = "data/";
 	$target_file = $target_dir . basename($_FILES["sonis_data"]["name"]);
-	// var_dump($_FILES['sonis_data']);
-	
-	$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
-
-	if (move_uploaded_file($_FILES["sonis_data"]["tmp_name"], $target_file) ) {
-		$_SESSION['ExcelFile'] = $target_file;
-	} else {
+		
+	if (move_uploaded_file($_FILES["sonis_data"]["tmp_name"], $target_file))
+	{
+		$_SESSION['ExcelFile'] = $target_file ;
+	} else 
+	{
 	    header("Location: index.php?msg=Sorry, We couldn't upload your file");
 	}
 
@@ -43,13 +42,12 @@ $controller = new controller($_SESSION['ExcelFile']);
 $students= array();
 $classes=$controller->getClasses();
 
-foreach ($classes as $key => $value) {
+foreach ($classes as $key => $value)
+{
 	
-	foreach ($events as $event) {
-		if(trim($event['title'])==trim($value)) 
-			{
-				unset($classes[$key]);
-			}
+	foreach ($events as $event) 
+	{
+		if( trim($event['title']) == trim($value) ) unset($classes[$key]);
 	}
 
 }
@@ -63,6 +61,10 @@ foreach ($studentIDs as $studentID)
 
 $controller->addClasses($students);
 
-
+if(isset($_GET['reset'])) 
+	{
+		$DB->emptyCalendar();
+		header("Location: scheduler.php");	
+	}
 
 ?>
