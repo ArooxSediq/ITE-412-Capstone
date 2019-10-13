@@ -12,11 +12,8 @@
 <div class="main">
   	
   <div class="col-12" style="justify-content: center; text-align: center; align-items: center; background: #f8f8ff; padding: 5%;">
-  		<img src="img/logo.png" width="5%" style="margin:1%;"> 
-  			<span style="font-size: 18pt;">
-  				Exam Scheduling Assistant
-  			</span>
-  		<br>
+  		<img src="img/auis_logo.png" width="50%" style="margin:1%;"> 
+  
   </div>
 
   <div class="col-12" style="justify-content: center; text-align: center; align-items: center; background: #232b2b; padding: 5%;">

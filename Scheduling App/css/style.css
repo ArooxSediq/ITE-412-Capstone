@@ -2,6 +2,7 @@
   body {
     font-size: 14px;
     font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
+    padding-top: 5%;
   }
 
   #wrap {
@@ -24,8 +25,16 @@
     text-align: left;
   }
 
+  .navbar-brand
+  {
+    width: 400px;
+  }
   #notify{
-    background: white;  direction: ltr; justify-content: center; text-align: center;
+    direction: ltr; 
+    justify-content: left; 
+    text-align: center;
+    width: 50%;
+    background: white;
   }
   #external-events h4 {
     font-size: 16px;

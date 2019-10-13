@@ -6,13 +6,7 @@
 <body>
   <?php include 'navbar.php' ?>
   <div id='wrap'>
-
-    <div class="col-12">
-      <button onclick="Calculate();" class="btn btn-block btn-outline-info">Check students</button>     
-      <!-- <hr>             -->
-    </div>
-
-    <div class="col-12" style="height: 100px;padding: 5%;" id="notify"></div>
+ 
 
     <!-- <hr> -->
     
@@ -30,16 +24,26 @@
 
     </div>
 
-    <span style="padding-left: 4.5%;">Autocheck?</span>
-      <input type="checkbox" id="autocheck" checked>  
+   <br>
+    <div id="buttons" style="justify-content: center; text-align: center;">
+         
+    <span >Autocheck?</span>
+    <input type="checkbox" id="autocheck" checked> 
+    
+    <br>
 
-    <button class="btn btn-outline-info" onclick="save(calendar.getEvents());">
-      Save
-    </button>
-    <a href="scheduler.php?reset=true" class="btn btn-outline-info">
-      Reset
-    </a>
+    <span >3 Exams per day</span>
+    <input type="checkbox" id="3exams" checked>  
+   
+    <br><br>
 
+    <button onclick="Calculate();" class="btn btn-outline-info">Check</button>     
+    <button class="btn btn-outline-info" onclick="save(calendar.getEvents());"> Save</button>
+    <a href="scheduler.php?reset=true" class="btn btn-outline-info"> Reset</a>
+
+
+    </div>
+ 
       <br><br>
     <div id='calendar'>
       
