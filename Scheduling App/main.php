@@ -10,13 +10,13 @@ require 'vendor/autoload.php';
 require 'student.php';
 require 'controller.php';
 require 'database.php';
+require 'user.php';
 
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
 use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 
 // Import the excel data file
 
-session_start();
 
 if(!isset($_SESSION['ExcelFile']))
 {
@@ -28,14 +28,13 @@ if(!isset($_SESSION['ExcelFile']))
 		$_SESSION['ExcelFile'] = $target_file ;
 	} else 
 	{
-	    header("Location: index.php?msg=Sorry, We couldn't upload your file");
+	    header("Location: upload.php?msg=Sorry, We couldn't upload your file");
 	}
-
 }
 
 $DB = new database();
 
-$events = $DB->fetch();
+$events = $DB->fetch('events');
 
 $controller = new controller($_SESSION['ExcelFile']);
 

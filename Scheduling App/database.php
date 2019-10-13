@@ -34,10 +34,10 @@ class database
 		$result =	$this->db->query("TRUNCATE table `events`;");
 	}
 
-	function fetch()
+	function fetch($table)
 	{
 
-		$sql = "SELECT * FROM events";
+		$sql = "SELECT * FROM $table";
 		$result = $this->db->query($sql);
 		$data = array();
 

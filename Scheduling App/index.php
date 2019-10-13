@@ -1,43 +1,80 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<?php include('head.php'); ?>
+  <?php
+  
+      include 'head.php';
+      include 'database.php';
+      $DB = new database();
+      $events = $DB->fetch('events');
+
+   ?>
+  <style type="text/css">
+    #calendar{
+      margin: 5%;
+    }
+  </style>
 </head>
 <body>
 
-<div class="main">
-  	
-  <div class="col-12" style="justify-content: center; text-align: center; align-items: center; background: #f8f8ff; padding: 5%;">
-  		<img src="img/logo.png" width="5%" style="margin:1%;"> 
-  			<span style="font-size: 18pt;">
-  				Exam Scheduling Assistant
-  			</span>
-  		<br>
-  </div>
+ 
+<?php include('navbar.php'); ?>
 
-  <div class="col-12" style="justify-content: center; text-align: center; align-items: center; background: #232b2b; padding: 5%;">
-
-  		 <form action="scheduler.php" method="POST" enctype="multipart/form-data">
-  		 	<label for="sonis_data" class="text-white">Please import excel datasheet provided by sonis</label>
-  		 	<hr>
-			<div class="custom-file">
-				
-				<input type="file" class="custom-file-input" name="sonis_data" id="sonis_data">
-				<label class="custom-file-label" for="sonis_data">Choose file</label>
-				<br> <br>
-				<button type="submit" class="btn btn-outline-info btn-block" style="margin: 0;">Import</button>
-
-			</div>
-		 
-		  </form>
-
-
-  </div>
-
+    <div id='calendar'>
+      
+    </div>
 
   
-</div>
- 
+
+
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+  <script src='packages/core/main.js'></script>
+  <script src='packages/interaction/main.js'></script>
+  <script src='packages/daygrid/main.js'></script>
+  <script src='packages/timegrid/main.js'></script>
+  <script src='packages/list/main.js'></script>
+  
+  <script type="text/javascript">
+  
+  var events = <?php echo json_encode($events); ?>;
+
+  var calendar;
+
+  document.addEventListener('DOMContentLoaded', function()
+  {
+    calendar = FullCalendar.Calendar;
+    var Draggable = FullCalendarInteraction.Draggable
+
+    var calendarEl = document.getElementById('calendar');
+    
+    calendar = new calendar(calendarEl, 
+    {
+      plugins: [ 'interaction', 'dayGrid', 'timeGrid' ],
+       defaultView: 'timeGridFourDay',
+        views: {
+          timeGridFourDay: {
+            type: 'timeGrid',
+            duration: { days: 10 }
+          }
+        },
+      header: {
+        left: 'prev,next today',
+        center: 'title',
+        right: 'timeGridWeek,timeGridDay,listWeek'
+      },
+      editable: false,
+      defaultTimedEventDuration: '02:00:00',
+      events: events 
+
+    });
+    calendar.render();
+
+  }); //end Dom Document loaded function
+
+</script>    
 
 </body>
 </html>

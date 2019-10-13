@@ -4,6 +4,7 @@
   <?php require('main.php'); ?>
 </head>
 <body>
+  <?php include 'navbar.php' ?>
   <div id='wrap'>
 
     <div class="col-12">

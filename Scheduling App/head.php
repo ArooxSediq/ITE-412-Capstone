@@ -1,3 +1,8 @@
+  <?php 
+
+  session_start();
+
+  ?>
 
   <title>Exam Scheduling Assitant</title>
 

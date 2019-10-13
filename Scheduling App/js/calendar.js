@@ -1,13 +1,10 @@
+
   var calendar;
 
   document.addEventListener('DOMContentLoaded', function()
   {
     calendar = FullCalendar.Calendar;
     var Draggable = FullCalendarInteraction.Draggable
-
-    /* initialize the external events
-    -----------------------------------------------------------------*/
-
 
     var containerEl = document.getElementById('external-events-list');
     new Draggable(containerEl, {
@@ -21,15 +18,12 @@
 
     });
 
-
-    /* initialize the calendar
-    -----------------------------------------------------------------*/
-
     var calendarEl = document.getElementById('calendar');
-    calendar = new calendar(calendarEl, {
+    
+    calendar = new calendar(calendarEl, 
+    {
       plugins: [ 'interaction', 'dayGrid', 'timeGrid' ],
        defaultView: 'timeGridFourDay',
-        events:{ duration: '02:00' },
         views: {
           timeGridFourDay: {
             type: 'timeGrid',
