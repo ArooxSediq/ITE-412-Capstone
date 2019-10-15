@@ -32,8 +32,8 @@
     
     <br>
 
-    <span >3 Exams per day</span>
-    <input type="checkbox" id="3exams" checked>  
+    <span >Only show more than 2 exams per day </span>
+    <input type="checkbox" id="multipleExams" checked>  
    
     <br><br>
 
@@ -117,7 +117,14 @@
 
           }
           
-          if(conflicts['number']>1)
+          var cond=1;
+
+         if(document.getElementById('multipleExams').checked)
+          {       
+            cond=2
+          }
+
+          if(conflicts['number']>cond)
           {
             var notification = "ID: "+students[i].id+"\nExams Count: "+conflicts['number']+" \nDate: "+conflicts['date']+"\nExams: "+conflicts['classes'];
 
