@@ -12,8 +12,12 @@ require 'controller.php';
 require 'database.php';
 require 'user.php';
 
+
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
 use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
+use PhpOffice\PhpSpreadsheet\Helper\Sample;
+use PhpOffice\PhpSpreadsheet\IOFactory;
+require_once  'vendor/PhpOffice/PhpSpreadsheet/src/Bootstrap.php';
 
 // Import the excel data file
 
@@ -35,6 +39,7 @@ if(!isset($_SESSION['ExcelFile']))
 $DB = new database();
 
 $events = $DB->fetch('events');
+
 
 $controller = new controller($_SESSION['ExcelFile']);
 
@@ -65,5 +70,10 @@ if(isset($_GET['reset']))
 		$DB->emptyCalendar();
 		header("Location: scheduler.php");	
 	}
+
+if(isset($_GET['export']))
+{
+	 header("Location: excelGenerator.php?data=".json_encode($events));
+}
 
 ?>
