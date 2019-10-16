@@ -42,9 +42,9 @@
 	$headings=array_unique($headings);
 	$indexs='A B C D E F G H I J K L M N O P Q R S T U V W X Y Z';
 	$indexs = explode(' ', $indexs);
-
 	$ix=3;
 	    foreach ($headings as $key => $value) {
+	    	echo $indexs[$key]."1";
 	    	$spreadsheet->setActiveSheetIndex(0)->setCellValue($indexs[$key]."1", $value);
 
 	    	foreach ($events as $k => $event) {

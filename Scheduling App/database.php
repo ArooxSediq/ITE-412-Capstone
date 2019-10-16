@@ -72,17 +72,23 @@ class database
 		{
 
 
-			$sql = "INSERT INTO `events` (`id`, `title`, `start`, `end`) VALUES (NULL, '".$event[0]."', '".$event[1]."' , '".$event[2]."' );";			
+			$sql = "INSERT INTO `events` (`id`, `title`, `start`, `end`,`location`) VALUES (NULL, '".$event[0]."', '".$event[1]."' , '".$event[2]."','TBA' );";			
 			$result = $this->db->query($sql);
 
 
 		}
 		
-		// die(var_dump($this->db->error));
-		// $this->db->close();
 		return $result;
 
 	}
+
+function addLocation($title,$location)
+{
+
+	$Q="UPDATE `events` SET `location` = '".$location."' WHERE `events`.`title` = '".$title."';";
+	$result = 	$this->db->query($Q);
+	return $result;
+}
 
 
 }//Class 

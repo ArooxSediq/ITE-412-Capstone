@@ -65,6 +65,9 @@
         right: 'timeGridWeek,timeGridDay,listWeek'
       },
       editable: false,
+      eventRender: function (info) {
+        $(info.el).tooltip({ title: info.event.extendedProps.location });     
+      },
       defaultTimedEventDuration: '02:00:00',
       events: events 
 

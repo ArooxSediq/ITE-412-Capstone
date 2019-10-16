@@ -33,12 +33,13 @@
     <br>
 
     <span >Only show more than 2 exams per day </span>
-    <input type="checkbox" id="multipleExams" checked>  
+    <input type="checkbox" id="multipleExams">  
    
     <br><br>
 
     <button onclick="Calculate();" class="btn btn-outline-info">Check</button>  
-    <a href="scheduler.php?export=true" class="btn btn-outline-info">Export</a>   
+    <a href="scheduler.php?export=true" class="btn btn-outline-info">Export</a>
+       
     <button class="btn btn-outline-info" onclick="save(calendar.getEvents());"> Save</button>
     <a href="scheduler.php?reset=true" class="btn btn-outline-info"> Reset</a>
 
