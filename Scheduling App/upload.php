@@ -9,7 +9,7 @@
 </head>
 <body>
   <?php include 'navbar.php'; ?>
-<div class="main">
+<div class="">
   	
   <div class="col-12" style="justify-content: center; text-align: center; align-items: center; background: #f8f8ff; padding: 5%;">
   		<img src="img/auis_logo.png" width="50%" style="margin:1%;"> 

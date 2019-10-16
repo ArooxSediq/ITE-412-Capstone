@@ -76,17 +76,33 @@
 
   }); //end Dom Document loaded function
 
-</script>    
+</script>   
+<script type="text/javascript">
+ $(document).ready(function(){
+  var w = window.innerWidth;
+  var h = window.innerHeight;
+
+  if(w<h)
+  {
+    $(".nav-link").attr('style','font-size: 30px;');
+    $(".nav-link")[0].append(" Home");
+    $(".nav-link")[1].append("  Log in");
+  }
+ });
+
+</script> 
 <div style="padding-top: 90%;"></div>
-<div class="col-12" style="background: #F8F8FF ;padding:10%;text-align: center;vertical-align: middle;">
+<div class="col-12 text-white" style="background: #222c36  ;padding:5%;text-align: center;vertical-align: middle;">
     
-      <img src="img/auis_logo.png" width="50%">
+      <a href="https://auis.edu.krd" style="color: white;"><img src="img/auis.png" width="10%">The American University of Iraq, Slemani</a>
       
       <br><br>
 
       <p>Exam Scheduling Assistant</p> 
       <br>
-      Developed by <a href="https://github.com/ArooxSediq">@aroox</a>
+      2019 © <a href="https://www.linkedin.com/in/arukh-s-216181138/">@aroox</a>
+      
+      <a href="https://github.com/ArooxSediq/ITE-412-Capstone">Github</a>
       
     </div>
 </body>

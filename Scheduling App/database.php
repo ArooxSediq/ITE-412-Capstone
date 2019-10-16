@@ -14,7 +14,11 @@ class database
 	private $password = "";
 	private $schema = "examschedulingassistant";
 
-
+	function getDB()
+	{
+		return $this->db;
+	}
+	
 	function __construct()
 	{
 
@@ -85,7 +89,7 @@ class database
 function addLocation($title,$location)
 {
 
-	$Q="UPDATE `events` SET `location` = '".$location."' WHERE `events`.`title` = '".$title."';";
+	$Q="UPDATE `events` SET `location` = '".mysqli_real_escape_string($this->db,$location)."' WHERE `events`.`title` = '".mysqli_real_escape_string($this->db,$title)."';";
 	$result = 	$this->db->query($Q);
 	return $result;
 }

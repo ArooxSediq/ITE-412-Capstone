@@ -21,17 +21,16 @@ class user
 	
 	}
 
-	function create($username,$email,$password)
-	{
-
-	}
+	function create($username,$email,$password){}
 
 	function signIn($email,$password)
 	{
+		// die(var_dump($email));
 		foreach ($this->data as $datum) 
 		{
 			if($email == $datum['email'] && $password == $datum['password']) 
 				{
+
 					$_SESSION['user_email']=$email;
 					$_SESSION['user_password']=$password;
 					return true;

@@ -24,18 +24,17 @@
         <a class="nav-link" title="Log in" href="login.php"><i class="fa fa-sign-in"></i></a>
       </li>
 
-       <li class="nav-item">
-        <a class="nav-link" title="Scheduler" href="scheduler.php"><i class=" fa fa-calendar"></i></a>
-      </li>
-      
+     
       <?php else: ?>
 
       <li class="nav-item">
         <a class="nav-link" href="scheduler.php" title="Scheduler" ><i class=" fa fa-calendar"></i></a>
+        <span></span>
       </li>
       
       <li class="nav-item">
         <a class="nav-link " href="login.php?signout=true" title="Log out" ><i class=" fa fa-lock"></i></a>
+        <span></span>
       </li>
     
       <?php endif; ?>

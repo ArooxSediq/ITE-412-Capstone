@@ -8,8 +8,10 @@ session_start();
 $db = new database();
 $user = new user($db);
 
-if( $user->signIn($_POST['email'],$_POST['password']) ) header("Location: upload.php"); 
-else header("Location: index.php");
+$auth=$user->signIn(mysqli_real_escape_string($db->getDB(),$_POST['email']),mysqli_real_escape_string($db->getDB(),$_POST['password']));
+
+if( $auth ) header("Location: upload.php"); 
+else header("Location: index.php?error=".$db->error);
 
 
  ?>
