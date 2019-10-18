@@ -12,6 +12,8 @@
   <style type="text/css">
     #calendar{
       margin: 5%;
+      /*margin-right:10%;*/
+      width: 90%;
     }
   </style>
 </head>
@@ -55,7 +57,7 @@
         views: {
           timeGridFourDay: {
             type: 'timeGrid',
-            duration: { days: 10 }
+            duration: { days: 5 }
           }
         },
       header: {
@@ -91,7 +93,7 @@
  });
 
 </script> 
-<div style="padding-top: 90%;"></div>
+<div style="padding-top: 90%; background-color: #002855;"></div>
 <div class="col-12 text-white" style="background: #222c36  ;padding:5%;text-align: center;vertical-align: middle;">
     
       <a href="https://auis.edu.krd" style="color: white;"><img src="img/auis.png" width="10%">The American University of Iraq, Slemani</a>

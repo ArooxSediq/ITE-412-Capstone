@@ -117,7 +117,7 @@
 }
 
 .fc-time-grid .fc-slats .fc-minor td {
-  border-top-style: dotted;
+  border-top:none;
 }
 
 /* TimeGrid Highlighting Slots

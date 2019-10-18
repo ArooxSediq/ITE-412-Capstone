@@ -37,15 +37,14 @@
    
     <br><br>
 
-    <button onclick="Calculate();" class="btn btn-outline-info">Check</button>  
-    <a href="scheduler.php?export=true" class="btn btn-outline-info">Export</a>
-    <a href="addLocation.php" class="btn btn-outline-info">Locations</a>
-    <button class="btn btn-outline-info" onclick="save(calendar.getEvents());"> Save</button>
-    <a href="scheduler.php?reset=true" class="btn btn-outline-info"> Reset</a>
+    <button onclick="Calculate();" class="btn btn-outline-light">Check</button>  
+    <a href="scheduler.php?export=true" class="btn btn-outline-light">Export</a>
+    <a href="addLocation.php" class="btn btn-outline-light">Locations</a>
+    <button class="btn btn-outline-light" onclick="save(calendar.getEvents());"> Save</button>
+    <a href="scheduler.php?reset=true" class="btn btn-outline-light"> Reset</a>
 
 
     </div>
- 
       <br><br>
     <div id='calendar'>
       

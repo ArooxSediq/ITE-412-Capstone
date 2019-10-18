@@ -42,8 +42,8 @@
   }
 
   body {
-    background: #007bff;
-    background: linear-gradient(to right, #0062E6, #33AEFF);
+    background: #002855;
+    /*background: linear-gradient(to right, #0062E6, #33AEFF);*/
   }
 
   .card-signin {
@@ -73,6 +73,11 @@
     font-weight: bold;
     padding: 1rem;
     transition: all 0.2s;
+  }
+
+  .btn-primary{
+    background: #c99700 !important;
+    border: none;
   }
 
   .form-label-group {

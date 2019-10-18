@@ -1,9 +1,9 @@
-<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+<nav class="navbar fixed-top navbar-expand-lg navbar-light " style=" background: #c99700;">
   
   <a class="navbar-brand" href="#">   
-     <img src="img/logo.png" width="10%" style="margin:1%;"> 
+     <img src="img/auis.png" width="15%" style="margin:1%;"> 
         <span style="font-size: 15pt;">
-          Exam Scheduling Assistant
+          AUIS Exam Scheduling Application
         </span>
   </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
