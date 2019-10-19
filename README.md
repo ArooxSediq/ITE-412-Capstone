@@ -47,4 +47,8 @@ CSS
 JavaScript
 SQL
 PHP
+JSON
+JQuery
+Bootstrap
+PhpSpreadSheet
 FullCalender.io
