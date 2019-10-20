@@ -12,7 +12,6 @@
   <style type="text/css">
     #calendar{
       margin: 5%;
-      /*margin-right:10%;*/
       width: 90%;
     }
   </style>
@@ -39,7 +38,6 @@
   <script type="text/javascript">
 
   var events = <?php echo json_encode($events); ?>;
-
   var calendar;
 
   document.addEventListener('DOMContentLoaded', function()
@@ -67,7 +65,6 @@
       },
       editable: false,
       eventRender: function (info) {
-        // $(info.el).tooltip({ title: info.event.extendedProps.location });
         $(info.el).append('<span>Location: '+info.event.extendedProps.location+'</span>');     
       },
       defaultTimedEventDuration: '02:00:00',
@@ -75,7 +72,6 @@
 
     });
     calendar.render();
-    // calendar.gotoDate(  );
 
   }); //end Dom Document loaded function
 

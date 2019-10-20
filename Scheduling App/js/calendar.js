@@ -40,10 +40,7 @@
       events: events ,
       droppable: true, 
        eventDrop: function(info) {
-        if(document.getElementById('autocheck').checked)
-        {       
-          Calculate();
-        }
+        if(document.getElementById('autocheck').checked)  Calculate();
       },
       drop: function(arg ) {
           arg.draggedEl.parentNode.removeChild(arg.draggedEl);

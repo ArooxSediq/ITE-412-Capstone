@@ -71,9 +71,7 @@ if(isset($_GET['reset']))
 		header("Location: scheduler.php");	
 	}
 
-if(isset($_GET['export']))
-{
-	 header("Location: excelGenerator.php?data=".json_encode($events));
-}
+if(isset($_GET['export'])) header("Location: excelGenerator.php?data=".json_encode($events));
+
 
 ?>

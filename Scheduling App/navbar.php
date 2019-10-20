@@ -1,6 +1,6 @@
 <nav class="navbar fixed-top navbar-expand-lg navbar-light " style=" background: #c99700;">
   
-  <a class="navbar-brand" href="#">   
+  <a class="navbar-brand" href="index.php">   
      <img src="img/auis.png" width="15%" style="margin:1%;"> 
         <span style="font-size: 15pt;">
           AUIS Exam Scheduling Application

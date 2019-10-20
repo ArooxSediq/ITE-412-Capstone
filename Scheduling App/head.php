@@ -4,7 +4,7 @@
 
   ?>
 
-  <title>Exam Scheduling Assitant</title>
+  <title>AUIS Exam Scheduling Application</title>
 
   <meta charset='utf-8' />
   <meta name="author" content="Arukh Sediq Shkur">

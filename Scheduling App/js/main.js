@@ -2,11 +2,11 @@ var events;
 let exams = [];
 
 $(function () {
-  $('[data-toggle="tooltip"]').tooltip()
+	$('[data-toggle="tooltip"]').tooltip()
 })
 
 function onlyUnique(value, index, self) { 
-return self.indexOf(value) === index;
+	return self.indexOf(value) === index;
 }
 
 
@@ -33,7 +33,7 @@ function saveExams()
 
 	return examData;
 
-}
+}//function saveExams()
 
 function save(events)
 {
@@ -49,7 +49,7 @@ function save(events)
 		data.push(JSON.stringify(datum));
 	}
 	post('save.php',data);
-}
+}//function save()
 
 
 
@@ -73,5 +73,4 @@ function post(path, params, method='post') {
 
   document.body.appendChild(form);
   form.submit();
-
-}
+}//function post() 
