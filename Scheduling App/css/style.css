@@ -81,7 +81,7 @@
 
   .nav-link{
     color: #002855 !important;
-    font-size: 20px;
+    font-size: 20 px;
   }
 
   .nav-link:hover{
@@ -119,6 +119,10 @@
   .fc-event{
      background-color: #c99700;
      border: none;
+  }
+
+  .nav-item{
+    margin: 1%;
   }
   .btn-outline-success{
     margin-left: 2.5%;

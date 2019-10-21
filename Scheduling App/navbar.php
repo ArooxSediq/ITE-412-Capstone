@@ -1,7 +1,7 @@
 <nav class="navbar fixed-top navbar-expand-lg navbar-light " style=" background: #c99700;">
   
   <a class="navbar-brand" href="index.php">   
-     <img src="img/auis.png" width="15%" style="margin:1%;"> 
+     <img src="img/logo.png" width="15%" style="margin:1%;"> 
         <span style="font-size: 15pt;">
           AUIS Exam Scheduling Application
         </span>
@@ -13,18 +13,34 @@
    <div id="notify"></div>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto" style="padding-left: 50%;">
+    <ul class="navbar-nav mr-auto" style="margin-left: 50%;">
       <li class="nav-item">
         <a class="nav-link" href="index.php" title="Home" ><i class="fa fa-home"></i> </a>
       </li>
+
 
       <?php if(!isset($_SESSION['user_email'])): ?>
 
       <li class="nav-item">
         <a class="nav-link" title="Log in" href="login.php"><i class="fa fa-sign-in"></i></a>
       </li>
+<!-- 
+      <style type="text/css">
+        #id::placeholder{
+          color: white;
+        }
+        .fa-search{
+          color: white;
+        }
+      </style>
 
-     
+      <li class="nav-item" style="margin-left: 5%;">
+        <form id="search" method="POST" action="index.php" style="display: inline-flex;">
+          <input type="text" class="form-control" autocomplete="off" id="id" name="id" placeholder="Student ID" style="background: none; border: none;">
+          <button type="submit" form="search" class="btn btn-sm"><i class="  fa fa-search"></i></button>
+        </form>
+      </li>
+ -->
       <?php else: ?>
 
       <li class="nav-item">

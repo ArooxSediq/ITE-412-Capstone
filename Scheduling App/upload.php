@@ -7,7 +7,7 @@
   ?>
 
 </head>
-<body>
+<body style="overflow: hidden;">
   <?php include 'navbar.php'; ?>
 <div class="">
   	
@@ -16,7 +16,7 @@
   
   </div>
 
-  <div class="col-12" style="justify-content: center; text-align: center; align-items: center; background: #232b2b; padding: 5%;">
+  <div class="col-12" style="justify-content: center; text-align: center; align-items: center; background: #232b2b; padding: 5%; padding-bottom: 10%;">
 
   		 <form action="scheduler.php" method="POST" enctype="multipart/form-data">
   		 	<label for="sonis_data" class="text-white">Please import excel datasheet provided by sonis</label>

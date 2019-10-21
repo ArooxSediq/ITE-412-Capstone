@@ -20,7 +20,7 @@
 
  
 <?php include('navbar.php'); ?>
-
+    
     <div id='calendar'>
       
     </div>
