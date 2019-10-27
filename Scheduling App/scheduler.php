@@ -85,9 +85,9 @@
 
     function Calculate()
     {
+       console.clear();
       $('#notify').empty();
-      console.clear();
-
+     
       var conflict = [];
       var students = <?php echo json_encode($students); ?>;
       var exams = saveExams();
@@ -131,7 +131,7 @@
           {
             var notification = "ID: "+students[i].id+"\nExams Count: "+conflicts['number']+" \nDate: "+conflicts['date']+"\nExams: "+conflicts['classes'];
 
-            var data= "<span  data-container=\"body\" data-toggle=\"tooltip\" data-placement=\"top\" title=\" " + notification.toString() + "  \"><i  class=\"fas fa-user-graduate\"></i> </span> ";
+            var data= "<span  data-container=\"body\" data-toggle=\"tooltip\" data-placement=\"top\" title=\" " + notification.toString() + "  \"><i style=\"cursor: help;color: #002855; font-size:17pt;\" class=\"fa  fa-id-badge\"></i> </span> ";
 
             $('#notify').append(data);
 

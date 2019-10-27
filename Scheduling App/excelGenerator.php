@@ -1,7 +1,6 @@
 <?php 
 	session_start();
 
-
 	use PhpOffice\PhpSpreadsheet\Spreadsheet;
 	use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 	use PhpOffice\PhpSpreadsheet\Helper\Sample;
@@ -11,7 +10,6 @@
 	require 'vendor/autoload.php';
 
 	$events=json_decode($_GET['data']);
-
 
 	$helper = new Sample();
 
@@ -61,8 +59,9 @@
 	    	{
 	    		
 	    		if(substr($event->start,0,10)==trim($value))
-					$spreadsheet->setActiveSheetIndex(0)->setCellValue($indexs[$key].$ix++, $event->title."|".$event->location);
-
+					$spreadsheet->setActiveSheetIndex(0)->setCellValue($indexs[$key].$ix++, $event->title.'
+'.$event->location.'
+'.substr( $event->end,11,8));
 	    	}
 
 	    	$ix=2;
@@ -76,7 +75,6 @@
 	header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
 	header('Content-Disposition: attachment;filename="schedule.xlsx"');
 	header('Cache-Control: max-age=0');
-	// header('Cache-Control: max-age=1');
 	header('Expires: Mon, 26 Jul 1997 05:00:00 GMT'); // Date in the past
 	header('Last-Modified: ' . gmdate('D, d M Y H:i:s') . ' GMT'); // always modified
 	header('Cache-Control: cache, must-revalidate'); // HTTP/1.1

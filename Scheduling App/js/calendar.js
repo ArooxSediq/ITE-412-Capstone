@@ -30,6 +30,7 @@
             duration: { days: 15 }
           }
         },
+         timeZone: 'local',
       header: {
         left: 'prev,next today',
         center: 'title',
