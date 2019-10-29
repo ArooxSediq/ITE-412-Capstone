@@ -16,7 +16,7 @@
     <!-- <hr> -->
     
     <div id='external-events'>
-      <h3>Exams</h3>
+      <h3>Courses</h3>
       <div id='external-events-list'>
 
         <?php foreach ($classes as $class): ?>

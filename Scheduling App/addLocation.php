@@ -2,10 +2,10 @@
 <html>
 <head>
   <?php 
-  
-    if(!isset($_SESSION['user_email'])) header('Location: index.php'); 
+
     include('head.php'); 
     include('database.php');
+    if(!isset($_SESSION['user_email'])) header('Location: index.php'); 
 
     $db = new database();
     $events = $db->fetch('events');

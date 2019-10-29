@@ -32,10 +32,6 @@
   <!-- The following code has been retrived from https://startbootstrap.com/snippets/login/ -->
   <style type="text/css">
 
-  #calendar{
-      margin: 5%;
-    }
-
   :root {
     --input-padding-x: 1.5rem;
     --input-padding-y: .75rem;

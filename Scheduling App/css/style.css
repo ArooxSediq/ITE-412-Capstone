@@ -56,8 +56,13 @@
     background-color: #c99700;
 }
 
+
+.fc-scroller::-webkit-scrollbar-thumb:hover {
+    background-color: #fcbd00;
+}
+
   .fc-scroller::-webkit-scrollbar {
-    width: 6px;
+    width: 10px;
     background-color: #F5F5F5;
 } 
   .fc-scroller::-webkit-scrollbar-track {
@@ -70,8 +75,14 @@
     background-color: #c99700;
 }
 
+
+#external-events::-webkit-scrollbar-thumb:hover {
+    background-color: #fcbd00;
+}
+
+
   #external-events::-webkit-scrollbar {
-    width: 6px;
+    width: 10px;
     background-color: #F5F5F5;
 } 
   #external-events::-webkit-scrollbar-track {
@@ -119,6 +130,7 @@
   .fc-event{
      background-color: #c99700;
      border: none;
+     padding: 2.5%;
   }
 
   .nav-item{
