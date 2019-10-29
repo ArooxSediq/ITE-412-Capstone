@@ -1,7 +1,12 @@
 <html>
 <head> 
-  <?php include('head.php'); ?> 
-  <?php require('main.php'); ?>
+  <?php 
+
+    include('head.php');
+    require('main.php'); 
+    if(!isset($_SESSION['user_email'])) header('Location: index.php'); 
+
+   ?>
 </head>
 <body>
   <?php include 'navbar.php' ?>

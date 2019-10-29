@@ -3,7 +3,7 @@
 <head>
 	<?php 
     include('head.php'); 
-    include('auth_check.php');
+    if(!isset($_SESSION['user_email'])) header('Location: index.php'); 
   ?>
 
 </head>

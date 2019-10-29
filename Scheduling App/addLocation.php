@@ -2,8 +2,9 @@
 <html>
 <head>
   <?php 
+  
+    if(!isset($_SESSION['user_email'])) header('Location: index.php'); 
     include('head.php'); 
-    include('auth_check.php');
     include('database.php');
 
     $db = new database();
@@ -11,7 +12,6 @@
 
     if(isset($_GET['updateDB']))
     {
-      // echo $_GET['title'].'<br>'.$_POST['location'];
       $db->addLocation($_GET['title'],$_POST['location']);
       header("Location: addLocation.php");
     }
@@ -22,8 +22,7 @@
 <body>
   <?php include 'navbar.php'; ?>
 <div class="main">
-    
-
+  
     <table class="table table-hover">
       <thead>
         <tr>
@@ -49,10 +48,6 @@
       </tbody>
     </table>
 
-
-  
 </div>
- 
-
 </body>
 </html>

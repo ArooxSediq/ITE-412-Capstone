@@ -1,4 +1,3 @@
-
 <html>
 <head>
   <?php
@@ -38,6 +37,18 @@
 
   document.addEventListener('DOMContentLoaded', function()
   {
+
+    var w = window.innerWidth;
+    var h = window.innerHeight;
+
+    if(w<h)
+    {
+      $(".nav-link").attr('style','font-size: 30px;');
+      $(".nav-link")[0].append(" Home");
+      $(".nav-link")[1].append("  Log in");
+    }
+
+
     calendar = FullCalendar.Calendar;
     var Draggable = FullCalendarInteraction.Draggable
 
@@ -72,20 +83,7 @@
   }); //end Dom Document loaded function
 
 </script>   
-<script type="text/javascript">
- $(document).ready(function(){
-  var w = window.innerWidth;
-  var h = window.innerHeight;
 
-  if(w<h)
-  {
-    $(".nav-link").attr('style','font-size: 30px;');
-    $(".nav-link")[0].append(" Home");
-    $(".nav-link")[1].append("  Log in");
-  }
- });
-
-</script> 
 <div style="padding-top: 90%; background-color: #002855;"></div>
 <div class="col-12 text-white" style="background: #222c36  ;padding:5%;text-align: center;vertical-align: middle;">
     

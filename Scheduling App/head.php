@@ -1,8 +1,4 @@
-  <?php 
-
-  session_start();
-
-  ?>
+  <?php session_start();  ?>
 
   <title>AUIS Exam Scheduling Application</title>
 
@@ -10,7 +6,6 @@
   <meta name="author" content="Arukh Sediq Shkur">
   <meta name="msapplication-TileColor" content="#da532c">
   <meta name="theme-color" content="#0B4F6C">
-
   <link rel="manifest" href="manifest.json">
   <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
@@ -23,5 +18,3 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-  

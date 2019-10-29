@@ -24,23 +24,7 @@
       <li class="nav-item">
         <a class="nav-link" title="Log in" href="login.php"><i class="fa fa-sign-in"></i></a>
       </li>
-<!-- 
-      <style type="text/css">
-        #id::placeholder{
-          color: white;
-        }
-        .fa-search{
-          color: white;
-        }
-      </style>
-
-      <li class="nav-item" style="margin-left: 5%;">
-        <form id="search" method="POST" action="index.php" style="display: inline-flex;">
-          <input type="text" class="form-control" autocomplete="off" id="id" name="id" placeholder="Student ID" style="background: none; border: none;">
-          <button type="submit" form="search" class="btn btn-sm"><i class="  fa fa-search"></i></button>
-        </form>
-      </li>
- -->
+      
       <?php else: ?>
 
       <li class="nav-item">
