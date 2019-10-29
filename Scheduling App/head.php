@@ -16,14 +16,12 @@
   <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
   <link rel="mask-icon" href="img/safari-pinned-tab.svg" color="#5bbad5">
-
   <link href='packages/core/main.css' rel='stylesheet' />
   <link href='packages/daygrid/main.css' rel='stylesheet' />
   <link href='packages/timegrid/main.css' rel='stylesheet' />
   <link href='packages/list/main.css' rel='stylesheet' />
   <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <!-- <script src="https://kit.fontawesome.com/9a4452a1e7.js" crossorigin="anonymous"></script> -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
   

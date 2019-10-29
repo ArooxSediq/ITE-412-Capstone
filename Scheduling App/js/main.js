@@ -1,9 +1,6 @@
 var events;
 let exams = [];
 
-$(function () {
-	$('[data-toggle="tooltip"]').tooltip()
-})
 
 function onlyUnique(value, index, self) { 
 	return self.indexOf(value) === index;
