@@ -52,4 +52,4 @@ JQuery
 Bootstrap
 PhpSpreadSheet
 FullCalender.io
-Gregwar\Captcha
+Google ReCaptcha
