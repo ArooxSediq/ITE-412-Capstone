@@ -68,6 +68,10 @@ class ComposerStaticInit99aedfdfab756791e5fee23823f4b533
     );
 
     public static $prefixLengthsPsr4 = array (
+        'S' => 
+        array (
+            'Symfony\\Component\\Finder\\' => 25,
+        ),
         'P' => 
         array (
             'Psr\\SimpleCache\\' => 16,
@@ -77,6 +81,10 @@ class ComposerStaticInit99aedfdfab756791e5fee23823f4b533
         array (
             'Matrix\\' => 7,
         ),
+        'G' => 
+        array (
+            'Gregwar\\' => 8,
+        ),
         'C' => 
         array (
             'Complex\\' => 8,
@@ -84,6 +92,10 @@ class ComposerStaticInit99aedfdfab756791e5fee23823f4b533
     );
 
     public static $prefixDirsPsr4 = array (
+        'Symfony\\Component\\Finder\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/finder',
+        ),
         'Psr\\SimpleCache\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/simple-cache/src',
@@ -95,6 +107,10 @@ class ComposerStaticInit99aedfdfab756791e5fee23823f4b533
         'Matrix\\' => 
         array (
             0 => __DIR__ . '/..' . '/markbaker/matrix/classes/src',
+        ),
+        'Gregwar\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/gregwar/captcha/src/Gregwar',
         ),
         'Complex\\' => 
         array (

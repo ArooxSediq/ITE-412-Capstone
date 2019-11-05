@@ -4,14 +4,18 @@
   
       include 'head.php';
       include 'database.php';
-      $DB = new database();
+      $DB = new database('public');
       $events = $DB->fetch('events');
+      $students = $DB->fetch('students');
 
    ?>
   <style type="text/css">
     #calendar{
       margin: 5%;
       width: 90%;
+    }
+    body{
+      background: #222c36;
     }
   </style>
 </head>

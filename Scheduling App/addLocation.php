@@ -7,7 +7,7 @@
     include('database.php');
     if(!isset($_SESSION['user_email'])) header('Location: index.php'); 
 
-    $db = new database();
+    $db = new database('admin');
     $events = $db->fetch('events');
 
     if(isset($_GET['updateDB']))

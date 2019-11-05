@@ -10,8 +10,8 @@ class database
 {
 	private $db;
 	private $servername = "localhost";
-	private $username = "root";
-	private $password = "";
+	private $username = "Admins";
+	private $password = "7dXTV30SlNqywx43";
 	private $schema = "examschedulingassistant";
 
 	function getDB()
@@ -19,19 +19,32 @@ class database
 		return $this->db;
 	}
 	
-	function __construct()
+	function __construct($type)
 	{
+		if($type=='public')
+		{
+		
+			// Create connection
+			$this->db = new mysqli($this->servername, 'Public', '1234@4321' , $this->schema);
 
-		// Create connection
-		$this->db = new mysqli($this->servername, $this->username, $this->password , $this->schema);
+			// Check connection
+			if ($this->db->connect_error) {
+			    die("Connection failed: " . $this->db->connect_error);
+			}	
+					
+		}else
+		{
+			// Create connection
+			$this->db = new mysqli($this->servername, $this->username, $this->password , $this->schema);
 
-		// Check connection
-		if ($this->db->connect_error) {
-		    die("Connection failed: " . $this->db->connect_error);
+			// Check connection
+			if ($this->db->connect_error) {
+			    die("Connection failed: " . $this->db->connect_error);
+			}
 		}
-		// echo "Connected successfully";
 		
 	}
+
 
 	function emptyCalendar()
 	{
@@ -94,6 +107,18 @@ function addLocation($title,$location)
 	return $result;
 }
 
+function addStudents($students)
+{
+	$Q="";
+
+	foreach ($students as $key => $student)
+	{
+		$Q.= "INSERT INTO `students` (`id`, `auis_id`, `classes`) VALUES (NULL, '".$student->id."' , '".json_encode($student->classes)."' );";	
+		
+		$result=	$this->db->query($Q);
+	}
+	return $result;
+}
 
 }//Class 
 

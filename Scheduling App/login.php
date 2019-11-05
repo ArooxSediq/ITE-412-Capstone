@@ -22,12 +22,25 @@
   <link rel="stylesheet" type="text/css" href="css/style.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <script src="https://kit.fontawesome.com/9a4452a1e7.js" crossorigin="anonymous"></script>
+  <script src="https://www.google.com/recaptcha/api.js?render=6LdYF8EUAAAAAJV7aseBxpewnGI_E4msSgvIDX0k" async defer></script>
+  <script type="text/javascript">
+      var onloadCallback = function() {
+        grecaptcha.render('html_element', {
+          'sitekey' : '6LfTGMEUAAAAADaIFJKXKLU6ze6eRM6v3Xi46THQ'
+        });
+      };    
+  </script>
 
-  <?php if(isset($_GET['signout'])){
+  <?php
+
+   if(isset($_GET['signout'])){
     session_start();
     session_destroy();
     header("Location: index.php");
-  }  ?>
+  }  
+
+
+  ?>
   
   <!-- The following code has been retrived from https://startbootstrap.com/snippets/login/ -->
   <style type="text/css">
@@ -196,17 +209,27 @@
                 <label for="inputPassword">Password</label>
               </div>
 
+              <div class="form-label-group">
+                 <div id="html_element"></div>
+              </div>
+
               <div class="custom-control custom-checkbox mb-3">
                 <input type="checkbox" class="custom-control-input" id="customCheck1">
                 <label class="custom-control-label" for="customCheck1">Remember password</label>
               </div>
+
               <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Sign in</button>
               <hr class="my-4">
             </form>
+
+
           </div>
         </div>
 
 </div> 
+ <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
+        async defer>
+    </script>
 
 </body>
 </html>

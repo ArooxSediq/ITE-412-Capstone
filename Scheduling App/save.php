@@ -2,7 +2,7 @@
   
   require 'database.php';
 
-  $DB = new database();
+  $DB = new database('admin');
 
   foreach ($_POST as $event) 
   {

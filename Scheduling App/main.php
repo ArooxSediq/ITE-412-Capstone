@@ -36,10 +36,9 @@ if(!isset($_SESSION['ExcelFile']))
 	}
 }
 
-$DB = new database();
+$DB = new database('admin');
 
 $events = $DB->fetch('events');
-
 
 $controller = new controller($_SESSION['ExcelFile']);
 
@@ -65,10 +64,12 @@ foreach ($studentIDs as $studentID)
 
 $controller->addClasses($students);
 
+$DB->addStudents($students);
+
 if(isset($_GET['reset'])) 
 	{
 		$DB->emptyCalendar();
-		header("Location: scheduler.php");	
+		// header("Location: scheduler.php");	
 	}
 
 if(isset($_GET['export'])) header("Location: excelGenerator.php?data=".json_encode($events));

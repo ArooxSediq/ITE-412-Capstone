@@ -27,7 +27,8 @@ class user
 	{
 		// die(var_dump($email));
 		foreach ($this->data as $datum) 
-		{
+		{	
+			// die(var_dump($password));
 			if($email == $datum['email'] && $password == $datum['password']) 
 				{
 
