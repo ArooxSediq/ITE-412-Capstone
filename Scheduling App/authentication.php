@@ -12,7 +12,7 @@ session_start();
 
 if(isset($_POST['g-recaptcha-response']))
   {
-        $secret = '6LfTGMEUAAAAANY20oKE1_G5nFirPyE1H66y50dK';
+        $secret = '_KEY_';
         $verifyResponse = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret='.$secret.'&response='.$_POST['g-recaptcha-response']);
         $responseData = json_decode($verifyResponse);
         if($responseData->success)
