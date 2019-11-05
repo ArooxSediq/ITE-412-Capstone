@@ -209,7 +209,7 @@
                 <label for="inputPassword">Password</label>
               </div>
 
-              <div class="form-label-group">
+              <div class="form-label-group" style="padding: 10%;">
                  <div id="html_element"></div>
               </div>
 
@@ -220,6 +220,7 @@
 
               <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Sign in</button>
               <hr class="my-4">
+              <div class="col-12" style="text-align: center;"><p class="text-danger"><?php echo $_GET['error'] ?></p></div>
             </form>
 
 
