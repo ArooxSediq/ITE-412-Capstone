@@ -1,9 +1,9 @@
 <?php 
 
-if(empty($_POST['g-recaptcha-response'])) {
-	header("Location: login.php?error=Please complete the captcha."); 
-	die();
-}
+// if(empty($_POST['g-recaptcha-response'])) {
+// 	header("Location: login.php?error=Please complete the captcha."); 
+// 	die();
+// }
 
 include 'user.php';
 include 'database.php';

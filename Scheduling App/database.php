@@ -10,8 +10,8 @@ class database
 {
 	private $db;
 	private $servername = "localhost";
-	private $username = "Admins";
-	private $password = "7dXTV30SlNqywx43";
+	private $username = "root";
+	private $password = "";
 	private $schema = "examschedulingassistant";
 
 	function getDB()
@@ -109,15 +109,16 @@ function addLocation($title,$location)
 
 function addStudents($students)
 {
-	$Q="";
-
-	foreach ($students as $key => $student)
+	$Q="TRUNCATE table `students`";
+	$this->db->query($Q);
+	foreach ($students as $student)
 	{
-		$Q.= "INSERT INTO `students` (`id`, `auis_id`, `classes`) VALUES (NULL, '".$student->id."' , '".json_encode($student->classes)."' );";	
+		// die(var_dump($student));
+		$Q= "INSERT INTO `students` (`auis_id`, `classes`) VALUES ( '".$student->id."' , '".json_encode($student->classes)."' );";	
 		
-		$result=	$this->db->query($Q);
+		if(	!$this->db->query($Q) ) die(var_dump($this->db->error));
 	}
-	return $result;
+	return;
 }
 
 }//Class 
