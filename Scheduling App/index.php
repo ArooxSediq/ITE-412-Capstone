@@ -8,6 +8,30 @@
       $events = $DB->fetch('events');
       $students = $DB->fetch('students');
 
+      if(isset($_GET['student_id']))
+      {
+        $found;
+        foreach ($students as $student) {
+          if(ltrim($student['auis_id'],'0')==trim($_GET['student_id'])) 
+            {
+              $found=$student;
+              break;
+            }
+        }
+       
+        if(isset($found))
+        {
+          $studentSchedule=[];
+          foreach ($events as $event) {
+              foreach (json_decode($found['classes']) as $class) {
+                if(trim($event['title'])==trim($class)) array_push($studentSchedule, $event);
+              }
+          }
+        }
+        
+
+        
+      }
    ?>
   <style type="text/css">
     #calendar{
@@ -23,7 +47,7 @@
 
  
 <?php include('navbar.php'); ?>
-    
+  
   <div id='calendar'></div>
 
   <script src="js/jquery.js"></script>
@@ -36,7 +60,8 @@
   
   <script type="text/javascript">
 
-  var events = <?php echo json_encode($events); ?>;
+  var events = <?php if(isset($studentSchedule)) echo json_encode($studentSchedule); else echo json_encode($events); ?>;
+
   var calendar;
 
   document.addEventListener('DOMContentLoaded', function()
@@ -62,11 +87,11 @@
     {
       plugins: [ 'interaction', 'dayGrid', 'timeGrid' ],
        defaultView: 'timeGridFourDay',
-       defaultDate: '<?php echo substr($events[0]['start'], 0,10) ; ?>' ,
+       defaultDate: '<?php if(isset($studentSchedule)) echo  substr($studentSchedule[0]['start'],0,10); else echo substr($events[0]['start'], 0,10) ; ?>' ,
         views: {
           timeGridFourDay: {
             type: 'timeGrid',
-            duration: { days: 5 }
+            duration: { days: 7 }
           }
         },
       header: {
@@ -88,7 +113,8 @@
 
 </script>   
 
-<div style="padding-top: 90%; background-color: #002855;"></div>
+<div style="padding-top: 90%; background-color: #002855;">  </div>
+
 <div class="col-12 text-white" style="background: #222c36  ;padding:5%;text-align: center;vertical-align: middle;">
     
       <a href="https://auis.edu.krd" style="color: white;"><img src="img/auis.png" width="10%">The American University of Iraq, Slemani</a>
