@@ -24,21 +24,19 @@ class database
 		if($type=='public')
 		{
 		
-			// Create connection
 			$this->db = new mysqli($this->servername, 'Public', '1234@4321' , $this->schema);
 
-			// Check connection
-			if ($this->db->connect_error) {
+			if ($this->db->connect_error) 
+			{
 			    die("Connection failed: " . $this->db->connect_error);
 			}	
 					
 		}else
 		{
-			// Create connection
 			$this->db = new mysqli($this->servername, $this->username, $this->password , $this->schema);
 
-			// Check connection
-			if ($this->db->connect_error) {
+			if ($this->db->connect_error)
+			{
 			    die("Connection failed: " . $this->db->connect_error);
 			}
 		}
