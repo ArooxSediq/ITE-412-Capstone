@@ -1,5 +1,5 @@
 # ITE-412-Capstone
-<h3>AUIS Exam Scheduling Application </h3>
+<h3>AUIS Exam Schedule </h3>
 
 <p>Author: Arukh Sediq Shkur </p>
 <p>Supervisor: Alan Amin </p>
