@@ -135,7 +135,9 @@
 
   .nav-item{
     margin: 1%;
-    padding-left: 5%;
+    padding-left: 10%;
+
+    padding-right: 10%;
   }
   .btn-outline-success{
     margin-left: 2.5%;
