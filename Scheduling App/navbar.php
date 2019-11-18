@@ -26,7 +26,7 @@
    </div>
 
   <div class="navbar" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto" style="margin-left: 50%;  display: inline-flex !important; flex-direction: row !important;">
+    <ul class="navbar-nav mr-auto" style="  display: inline-flex !important; flex-direction: row !important;">
       <li class="nav-item">
         <a class="nav-link" href="index.php" title="Home" ><i class="fa fa-home"></i> </a>
       </li>
