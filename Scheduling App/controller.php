@@ -66,7 +66,7 @@ class controller
 		}
 
 		$classes = array_unique($classes);
-
+		sort($classes);
 		return $classes;
 	}
 

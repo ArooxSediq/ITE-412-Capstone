@@ -5,7 +5,7 @@
     include('head.php');
     require('main.php'); 
     if(!isset($_SESSION['user_email'])) header('Location: index.php'); 
-
+    
    ?>
 </head>
 <body>
@@ -64,7 +64,7 @@
         
         <br><br>
 
-        <p>Exam Scheduling Assistant</p> 
+        <p>Exam Scheduling Application</p> 
         <br>
         2019 © <a href="https://www.linkedin.com/in/arukh-s-216181138/">@aroox</a>
         
@@ -93,6 +93,7 @@
        console.clear();
       $('#notify').empty();
      
+      var notifications = []; 
       var conflict = [];
       var students = <?php echo json_encode($students); ?>;
       var exams = saveExams();
@@ -122,32 +123,37 @@
                   conflicts['classes'].push(found);
                   conflicts['date']=key;
                 }
-
           }
           
           var cond=1;
 
-         if(document.getElementById('multipleExams').checked)
-          {       
-            cond=2
-          }
+        if(document.getElementById('multipleExams').checked)  cond=2;   
 
-          if(conflicts['number']>cond)
+        if(conflicts['number']>cond)
           {
-            var notification = "ID: "+students[i].id+"\nExams Count: "+conflicts['number']+" \nDate: "+conflicts['date']+"\nExams: "+conflicts['classes'];
 
-            var data= "<span  data-container=\"body\" data-toggle=\"tooltip\" data-placement=\"top\" title=\" " + notification.toString() + "  \"><i style=\"cursor: help;color: #002855; font-size:17pt;\" class=\"fa  fa-id-badge\"></i> </span> ";
+            var notification = { "id":students[i].id , "number":conflicts['number'] , "classes":conflicts['classes'], "date":conflicts['date'] };
 
-            $('#notify').append(data);
+            notifications.push(notification);
 
-            console.log("Student with id: "+students[i].id+" has "+conflicts['number']+" exams on "+conflicts['date']+"\n the exams are: "+conflicts['classes']);
+            // var data= "<span  data-container=\"body\" data-toggle=\"tooltip\" data-placement=\"top\" title=\" " + notification.toString() + "  \"><i style=\"cursor: help;color: #002855; font-size:17pt;\" class=\"fa  fa-id-badge\"></i> </span> ";
 
           } 
 
         }
 
 
+      var nots=[];
+      for (var i = 0; i < notifications.length; i++) {
+          nots.push( ({ "date":notifications[i]['date']  , "notification":notifications[i]  }) );
       }
+
+      console.log(nots[0]);
+      
+      }
+
+
+  
     }
   </script>
   

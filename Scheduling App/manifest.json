@@ -1,5 +1,5 @@
 {
-  "short_name": "Scheduler",
+  "short_name": "Exam Schedule",
   "name": "AUIS Exam Scheduling Application",
   "icons": [
     {
@@ -13,9 +13,9 @@
       "sizes": "512x512"
     }
   ],
-  "start_url": "/",
-  "background_color": "#0B4F6C",
+  "start_url": "itd.auis.edu.krd/exam_schedule",
+  "background_color": "#002855",
   "display": "standalone",
-  "scope": "/",
-  "theme_color": "#0B4F6C"
+  "scope": "itd.auis.edu.krd/exam_schedule",
+  "theme_color": "#F5F5F5"
 }

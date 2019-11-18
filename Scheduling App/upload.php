@@ -28,6 +28,8 @@
 				<br> <br>
 				<button type="submit" class="btn btn-outline-info btn-block" style="margin: 0;">Import</button>
 
+        <button type="submit" class="btn btn-outline-light btn-block" style="margin: 0;">Skip</button>
+
 			</div>
 		 
 		  </form>

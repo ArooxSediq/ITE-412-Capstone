@@ -45,7 +45,6 @@
 </head>
 <body>
 
- 
 <?php include('navbar.php'); ?>
   
   <div id='calendar'></div>
@@ -66,17 +65,6 @@
 
   document.addEventListener('DOMContentLoaded', function()
   {
-
-    var w = window.innerWidth;
-    var h = window.innerHeight;
-
-    if(w<h)
-    {
-      $(".nav-link").attr('style','font-size: 30px;');
-      $(".nav-link")[0].append(" Home");
-      $(".nav-link")[1].append("  Log in");
-    }
-
 
     calendar = FullCalendar.Calendar;
     var Draggable = FullCalendarInteraction.Draggable
@@ -121,7 +109,7 @@
       
       <br><br>
 
-      <p>Exam Scheduling Assistant</p> 
+      <p>Exam Scheduling Application</p> 
       <br>
       2019 © <a href="https://www.linkedin.com/in/arukh-s-216181138/">@aroox</a>
       

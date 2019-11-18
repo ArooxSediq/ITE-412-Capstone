@@ -111,13 +111,68 @@ function addStudents($students)
 {
 	$Q="TRUNCATE table `students`";
 	$this->db->query($Q);
+	$Query=array( 0 => "", 1 => "",2 => "",3 => "",4 => "",5 => "",6 => "",7 => ""); $i=0;
+
 	foreach ($students as $student)
 	{
-		// die(var_dump($student));
-		$Q= "INSERT INTO `students` (`auis_id`, `classes`) VALUES ( '".$student->id."' , '".json_encode($student->classes)."' );";	
-		
-		if(	!$this->db->query($Q) ) die(var_dump($this->db->error));
+		if ($i<100) 
+		{		
+			$Query[0].= "INSERT INTO `students` (`auis_id`, `classes`) VALUES ( '".$student->id."' , '".json_encode($student->classes)."' );";			
+		}
+
+		if($i < 200 && $i > 99)
+		{
+			$Query[1].= "INSERT INTO `students` (`auis_id`, `classes`) VALUES ( '".$student->id."' , '".json_encode($student->classes)."' );";
+		}
+
+		if($i < 300 && $i > 199)
+		{
+			$Query[2].= "INSERT INTO `students` (`auis_id`, `classes`) VALUES ( '".$student->id."' , '".json_encode($student->classes)."' );";
+		}
+
+
+		if($i < 400 && $i > 299)
+		{
+			$Query[3].= "INSERT INTO `students` (`auis_id`, `classes`) VALUES ( '".$student->id."' , '".json_encode($student->classes)."' );";
+		}
+
+
+		if($i < 500 && $i > 399)
+		{
+			$Query[4].= "INSERT INTO `students` (`auis_id`, `classes`) VALUES ( '".$student->id."' , '".json_encode($student->classes)."' );";
+		}
+
+
+		if($i < 600 && $i > 499)
+		{
+			$Query[4].= "INSERT INTO `students` (`auis_id`, `classes`) VALUES ( '".$student->id."' , '".json_encode($student->classes)."' );";
+		}
+
+
+		if($i < 700 && $i > 599)
+		{
+			$Query[4].= "INSERT INTO `students` (`auis_id`, `classes`) VALUES ( '".$student->id."' , '".json_encode($student->classes)."' );";
+		}
+
+
+		if($i < 800 && $i > 699)
+		{
+			$Query[4].= "INSERT INTO `students` (`auis_id`, `classes`) VALUES ( '".$student->id."' , '".json_encode($student->classes)."' );";
+		}
+
+
+		if($i < 900 && $i > 799)
+		{
+			$Query[4].= "INSERT INTO `students` (`auis_id`, `classes`) VALUES ( '".$student->id."' , '".json_encode($student->classes)."' );";
+		}
+
+
+
+		$i++;	
 	}
+
+	foreach ($Query as $SQL) 	$this->db->multi_query($SQL);
+	
 	return;
 }
 
