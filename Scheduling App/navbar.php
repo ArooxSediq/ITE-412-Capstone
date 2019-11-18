@@ -6,9 +6,9 @@
           AUIS Exam Schedule
         </span>
   </a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+  <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
-  </button>
+  </button> -->
 
    <div id="notify"> 
     <div>
@@ -25,8 +25,8 @@
      </div>
    </div>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto" style="margin-left: 50%;">
+  <div class="navbar" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto" style="margin-left: 50%;  display: inline-flex !important; flex-direction: row !important;">
       <li class="nav-item">
         <a class="nav-link" href="index.php" title="Home" ><i class="fa fa-home"></i> </a>
       </li>
