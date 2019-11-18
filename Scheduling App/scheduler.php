@@ -136,23 +136,64 @@
 
             notifications.push(notification);
 
-            // var data= "<span  data-container=\"body\" data-toggle=\"tooltip\" data-placement=\"top\" title=\" " + notification.toString() + "  \"><i style=\"cursor: help;color: #002855; font-size:17pt;\" class=\"fa  fa-id-badge\"></i> </span> ";
-
+            
           } 
 
         }
 
 
-      var nots=[];
-      for (var i = 0; i < notifications.length; i++) {
-          nots.push( ({ "date":notifications[i]['date']  , "notification":notifications[i]  }) );
-      }
-
-      console.log(nots[0]);
       
       }
 
 
+      /** 
+
+      The Following code has been obtained from:
+      https://stackoverflow.com/questions/14446511/most-efficient-method-to-groupby-on-an-array-of-dataects
+
+       **/
+
+      var len = notifications.length;
+
+      var groupBy = function(xs, key) {
+        return xs.reduce(function(rv=[], x) {
+          (rv[x[key]] = rv[x[key]] || []).push(x);
+          return rv;
+        }, {});
+      };
+
+      var data = groupBy(notifications, 'date');
+      console.log(data);
+     
+     for (let key in data)
+     {
+       if(data.hasOwnProperty(key))
+       {
+      
+        for (let k in data[key])
+        {
+         if(data[key].hasOwnProperty(k))
+         { 
+            var notification = "ID: "+data[key][k]['id']+"\nExams Count: "+data[key][k]['number']+" \nDate: "+data[key][k]['date']+"\nExams: "+data[key][k]['classes'];
+
+              var str= "<span  data-container=\"body\" data-toggle=\"tooltip\" data-placement=\"top\" title=\" " + notification.toString() + "  \"><i style=\"cursor: help;color: #002855; font-size:17pt;\" class=\"fa  fa-id-badge\"></i> </span> ";
+
+               $('#notify').append(str);
+
+           }
+         }   
+           
+       }
+    }
+
+      
+      
+    
+       
+       
+   
+
+      
   
     }
   </script>
