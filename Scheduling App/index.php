@@ -109,7 +109,7 @@
       
       <br><br>
 
-      <p>Exam Scheduling Application</p> 
+      <p>AUIS Exam Schedule</p> 
       <br>
       2019 © <a href="https://www.linkedin.com/in/arukh-s-216181138/">@aroox</a>
       

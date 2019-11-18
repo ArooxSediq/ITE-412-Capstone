@@ -64,7 +64,7 @@
         
         <br><br>
 
-        <p>Exam Scheduling Application</p> 
+        <p>AUIS Exam Schedule</p> 
         <br>
         2019 © <a href="https://www.linkedin.com/in/arukh-s-216181138/">@aroox</a>
         
@@ -163,7 +163,7 @@
       };
 
       var data = groupBy(notifications, 'date');
-      console.log(data);
+    
      
      for (let key in data)
      {
@@ -179,7 +179,7 @@
               var str= "<span  data-container=\"body\" data-toggle=\"tooltip\" data-placement=\"top\" title=\" " + notification.toString() + "  \"><i style=\"cursor: help;color: #002855; font-size:17pt;\" class=\"fa  fa-id-badge\"></i> </span> ";
 
                $('#notify').append(str);
-
+              console.log(data[key][k]);
            }
          }   
            
