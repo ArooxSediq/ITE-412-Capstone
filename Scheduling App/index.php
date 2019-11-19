@@ -56,7 +56,6 @@
   <script src='packages/daygrid/main.js'></script>
   <script src='packages/timegrid/main.js'></script>
   <script src='packages/list/main.js'></script>
-  
   <script type="text/javascript">
 
   var events = <?php if(isset($studentSchedule)) echo json_encode($studentSchedule); else echo json_encode($events); ?>;
@@ -101,9 +100,58 @@
 
 </script>   
 
+
+  <script>
+ 
+window.addEventListener('load', function(){
+ 
+    var touchsurface = document.getElementById('calendar'),
+        startX,
+        startY,
+        dist,
+        threshold = 150, //required min distance traveled to be considered swipe
+        allowedTime = 200, // maximum time allowed to travel that distance
+        elapsedTime,
+        startTime
+ 
+    function handleswipe(isrightswipe){
+        if (isrightswipe)
+            calendar.next();
+        else{
+            calendar.prev();
+        }
+    }
+ 
+    touchsurface.addEventListener('touchstart', function(e){
+        var touchobj = e.changedTouches[0]
+        dist = 0
+        startX = touchobj.pageX
+        startY = touchobj.pageY
+        startTime = new Date().getTime() // record time when finger first makes contact with surface
+        e.preventDefault()
+    }, false)
+ 
+    touchsurface.addEventListener('touchmove', function(e){
+        e.preventDefault() // prevent scrolling when inside DIV
+    }, false)
+ 
+    touchsurface.addEventListener('touchend', function(e){
+        var touchobj = e.changedTouches[0]
+        dist = touchobj.pageX - startX // get total dist traveled by finger while in contact with surface
+        elapsedTime = new Date().getTime() - startTime // get time elapsed
+        // check that elapsed time is within specified, horizontal dist traveled >= threshold, and vertical dist traveled <= 100
+        var swiperightBol = (elapsedTime <= allowedTime && dist >= threshold && Math.abs(touchobj.pageY - startY) <= 100)
+        handleswipe(swiperightBol)
+        e.preventDefault()
+    }, false)
+ 
+}, false) // end window.onload
+</script>
+
+
 <div style="padding-top: 90%; background-color: #002855;">  </div>
 
-<div class="col-12 text-white" style="background: #222c36  ;padding:5%;text-align: center;vertical-align: middle;">
+<div class="col-12 text-white" id="footer" style="background: #222c36  ;padding:5%;text-align: center;vertical-align: middle;">
     
       <a href="https://auis.edu.krd" style="color: white;"><img src="img/auis.png" width="10%">The American University of Iraq, Slemani</a>
       
