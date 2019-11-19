@@ -95,7 +95,7 @@
 
     });
     calendar.render();
-
+      calendar.next();
   }); //end Dom Document loaded function
 
 </script>   
@@ -119,9 +119,9 @@ window.addEventListener('load', function(){
  
     function handleswipe(isrightswipe){
         if (isrightswipe)
-            calendar.next();
-        else{
             calendar.prev();
+        else{
+            calendar.next();
         }
     }
  

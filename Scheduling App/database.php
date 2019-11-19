@@ -46,7 +46,7 @@ class database
 
 	function emptyCalendar()
 	{
-		$result =	$this->db->query("TRUNCATE table `events`;");
+		return $this->db->query("TRUNCATE table `events`;");
 	}
 
 	function fetch($table)
@@ -169,7 +169,7 @@ function addStudents($students)
 		$i++;	
 	}
 
-	foreach ($Query as $SQL) 	$this->db->multi_query($SQL);
+	foreach ($Query as $SQL) 	$result = $this->db->multi_query($SQL);
 	
 	return;
 }
