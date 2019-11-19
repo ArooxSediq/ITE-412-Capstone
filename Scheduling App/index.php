@@ -101,6 +101,9 @@
 </script>   
 
 
+<!-- The following code has been obtained from: -->
+<!-- http://javascriptkit.com/javatutors/touchevents2.shtml -->
+
   <script>
  
 window.addEventListener('load', function(){
@@ -148,6 +151,7 @@ window.addEventListener('load', function(){
 }, false) // end window.onload
 </script>
 
+<!-- http://javascriptkit.com/javatutors/touchevents2.shtml -->
 
 <div style="padding-top: 90%; background-color: #002855;">  </div>
 
