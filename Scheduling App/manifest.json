@@ -13,9 +13,9 @@
       "sizes": "512x512"
     }
   ],
-  "start_url": "http://itd.auis.edu.krd/exam_schedule",
+  "start_url": "/ite-412-capstone/Scheduling App",
   "background_color": "#002855",
   "display": "standalone",
-  "scope": "itd.auis.edu.krd/exam_schedule",
+  "scope": "/ite-412-capstone/Scheduling App",
   "theme_color": "#F5F5F5"
 }

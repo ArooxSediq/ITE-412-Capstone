@@ -16,9 +16,13 @@
     <!-- <hr> -->
     
     <div id='external-events'>
-      <h3>Courses</h3>
+      <h3 style="border-bottom:2px #c99700 solid;">Courses</h3>
+      <br>  
       <div id='external-events-list'>
-
+        <form style="display: inline-flex;">
+          <input type="text" placeholder="Search .." id="search" name="search" style="background: none; color:white; border:none; border-bottom:1px solid #c99700; width: 75%;">
+          <button type="submit" style="background: none; border:none;color: #c99700;"><i class="fa fa-search"> </i></button>
+        </form>
         <?php foreach ($classes as $class): ?>
         
           <div class='fc-event'><?php echo $class ?></div>
@@ -84,6 +88,19 @@
   <script src='packages/list/main.js'></script>
   <script type="text/javascript" src="js/calendar.js"></script>
   <script type="text/javascript" src="js/main.js"></script>
+  <script type="text/javascript"> 
+
+      $(document).ready(function(){
+
+        var exams= $(".fc-event");
+
+        for (var i = 0; i <   exams.length; i++) {
+             console.log(exams[i]);      
+        }
+    
+      });
+
+  </script>
   <script type="text/javascript">
 
     var events = <?php echo json_encode($events); ?>;
@@ -136,13 +153,8 @@
 
             notifications.push(notification);
 
-            
           } 
-
         }
-
-
-      
       }
 
 
@@ -185,17 +197,8 @@
            
        }
     }
-
-      
-      
-    
-       
-       
-   
-
-      
   
-    }
+    }//Document ready
   </script>
   
 </html>
