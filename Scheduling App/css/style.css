@@ -9,8 +9,11 @@
   body {
     font-size: 14px;
     font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
-    padding-top: 16%;
+    padding-top: 5%;
+  }
 
+  #footer{
+    background: #222c36;padding:5%;text-align: center;vertical-align: middle;
   }
 
 
@@ -23,7 +26,7 @@
 
     background: #002855;
     padding: 5%;
-    margin-top: 40px;
+    /*margin-top: 40px;*/
     /*width: 1100px;*/
     /*margin: 0 auto;*/
   }
@@ -92,7 +95,7 @@
 
   .nav-link{
     color: #002855 !important;
-    font-size: 20 px;
+    font-size: 20px;
   }
 
   .nav-link:hover{
@@ -101,13 +104,14 @@
   .navbar-brand
   {
     width: 400px;
+    padding-right: 5%;
   }
 
   #notify{
     direction: ltr; 
     justify-content: left; 
     text-align: center;
-    width: 50%;
+    width:auto;
   }
   #external-events h4 {
     font-size: 16px;

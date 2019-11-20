@@ -155,7 +155,7 @@ function handleTouchMove(evt) {
 
 <div style="padding-top: 90%; background-color: #002855;">  </div>
 
-<div class="col-12 text-white" id="footer" style="background: #222c36  ;padding:5%;text-align: center;vertical-align: middle;">
+<div class="col-12 text-white" id="footer">
     
       <a href="https://auis.edu.krd" style="color: white;"><img src="img/auis.png" width="10%">The American University of Iraq, Slemani</a>
       

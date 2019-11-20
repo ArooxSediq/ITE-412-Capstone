@@ -19,10 +19,10 @@
       <h3 style="border-bottom:2px #c99700 solid;">Courses</h3>
       <br>  
       <div id='external-events-list'>
-        <form style="display: inline-flex;">
+        <!-- <form style="display: inline-flex;">
           <input type="text" placeholder="Search .." id="search" name="search" style="background: none; color:white; border:none; border-bottom:1px solid #c99700; width: 75%;">
           <button type="submit" style="background: none; border:none;color: #c99700;"><i class="fa fa-search"> </i></button>
-        </form>
+        </form> -->
         <?php foreach ($classes as $class): ?>
         
           <div class='fc-event'><?php echo $class ?></div>
