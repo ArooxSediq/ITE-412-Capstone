@@ -6,9 +6,9 @@
   <meta name="author" content="Arukh Sediq Shkur">
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="#F5F5F5">
-  <meta name="msapplication-TileColor" content="#F5F5F5">
-  <meta name="theme-color" content="#F5F5F5">
+  <meta name="apple-mobile-web-app-status-bar-style" content="#002855">
+  <meta name="msapplication-TileColor" content="#002855">
+  <meta name="theme-color" content="#002855">
   <link rel="apple-touch-icon-precomposed" href="img/apple-touch-icon.png">
   <link rel="manifest" href="manifest.json">
   <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
