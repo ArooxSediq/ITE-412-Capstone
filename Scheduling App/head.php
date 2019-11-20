@@ -30,7 +30,7 @@
       {
         $(".nav-link").attr('style','font-size: 30px;');
         $("#notify").attr('style',"width:auto;");
-        // $("#notify").next().attr('style','padding-right:5%;');
+        $("#notify").next().attr('style','padding-right:5%;');
         $("body").next().attr('style','margin-top:20%;')
       } 
       

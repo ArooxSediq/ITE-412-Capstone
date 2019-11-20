@@ -111,7 +111,7 @@
     direction: ltr; 
     justify-content: left; 
     text-align: center;
-    width:auto;
+    width: 50%;
   }
   #external-events h4 {
     font-size: 16px;
