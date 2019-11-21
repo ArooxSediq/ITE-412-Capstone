@@ -1,8 +1,4 @@
 
-
-  .navbar-toggler{
-       margin-left: 50%;
-  }
   .main{
     padding: 5%;
   }
@@ -53,7 +49,26 @@
     overflow-y: scroll;
 }
 
+  .fc-list-table {
+    background: white;
+    justify-content: center;
+    text-align: center;
+  }
+  .fc-location{
+    /*width: 100%;*/
+    color: black();
+    font-weight: bold;
+  }
 
+  .fc-list-heading-main{
+    color: black;
+  }
+  .fc-list-heading-alt{
+    color: grey;
+  }
+  .navbar-toggler{
+       margin-left: 50%;
+  }
 
 .fc-scroller::-webkit-scrollbar-thumb {
     background-color: #c99700;

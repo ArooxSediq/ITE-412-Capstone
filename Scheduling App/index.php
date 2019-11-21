@@ -72,7 +72,7 @@
     
     calendar = new calendar(calendarEl, 
     {
-      plugins: [ 'interaction', 'dayGrid', 'timeGrid' ],
+      plugins: [ 'interaction', 'dayGrid', 'timeGrid','list' ],
        defaultView: 'timeGridFourDay',
        defaultDate: '<?php if(isset($studentSchedule)) echo  substr($studentSchedule[0]['start'],0,10); else echo substr($events[0]['start'], 0,10) ; ?>' ,
         views: {
@@ -84,18 +84,19 @@
       header: {
         left: 'prev,next',
         center: 'title',
-        right: 'timeGridWeek,timeGridDay'
+        right: 'timeGridWeek,timeGridDay,listMonth'
       },
       editable: false,
       eventRender: function (info) {
-        $(info.el).append('<span>'+info.event.extendedProps.location+'</span>');     
+        $(info.el).find(".fc-list-item-marker").remove();
+        $(info.el).append('<td id=\"fc-location\" style=\"border:none;color:#002855;font-weight:bold;\"> '+info.event.extendedProps.location+'</td>');
       },
       defaultTimedEventDuration: '02:00:00',
       events: events 
 
     });
     calendar.render();
-  
+
   }); //end Dom Document loaded function
 
 </script>   
