@@ -46,7 +46,9 @@ class database
 
 	function emptyCalendar()
 	{
+
 		return $this->db->query("TRUNCATE table `events`;");
+		
 	}
 
 	function fetch($table)
@@ -93,6 +95,15 @@ class database
 
 		}
 		
+		while($this->db->more_results())
+		{
+		    $this->db->next_result();
+		    if($res = $this->db->store_result())
+		    {
+		        $res->free(); 
+		    }
+		}
+
 		return $result;
 
 	}
@@ -169,9 +180,20 @@ function addStudents($students)
 		$i++;	
 	}
 
-	foreach ($Query as $SQL) 	$result = $this->db->multi_query($SQL);
-	
-	return;
+	foreach ($Query as $SQL)
+	{
+		$result = $this->db->multi_query($SQL);
+		
+		while($this->db->more_results())
+		{
+		    $this->db->next_result();
+		    if($res = $this->db->store_result())
+		    {
+		        $res->free(); 
+		    }
+		}
+	} 	
+	return $result;
 }
 
 }//Class 
