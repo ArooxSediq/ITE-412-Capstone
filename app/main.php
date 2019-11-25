@@ -66,10 +66,8 @@ $controller->addClasses($students);
 
 $DB->addStudents($students);
 
-if(isset($_GET['reset'])){
-	$DB->emptyCalendar();
-	header("Location:scheduler.php");
-} 
+if(isset($_GET['reset'])) header("Location:scheduler.php?error=".$DB->emptyCalendar() );
+
 		
 if(isset($_GET['export'])) header("Location: excelGenerator.php?data=".json_encode($events));
 

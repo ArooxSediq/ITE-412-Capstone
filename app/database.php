@@ -12,7 +12,7 @@ class database
 	private $servername = "localhost";
 	private $username = "root";
 	private $password = "";
-	private $schema = "examschedulingassistant";
+	private $schema = "exam_schedule";
 
 	function getDB()
 	{
@@ -44,12 +44,8 @@ class database
 	}
 
 
-	function emptyCalendar()
-	{
+	function emptyCalendar() return $this->db->query("TRUNCATE TABLE `events`;");
 
-		return $this->db->query("TRUNCATE table `events`;");
-		
-	}
 
 	function fetch($table)
 	{
@@ -60,14 +56,10 @@ class database
 
 		if ($result->num_rows > 0) 
 		{
-		    // output data of each row
 		    while($row = $result->fetch_assoc()) {
 		        array_push($data,$row);
 		    }
 		} 
-
-		// die(var_dump($data));
-		// $this->db->close();
 		return $data;
 
 	}
@@ -118,8 +110,6 @@ function addLocation($title,$location)
 
 function addStudents($students)
 {
-	$Q="TRUNCATE table `students`";
-	$this->db->query($Q);
 	$Query=array( 0 => "", 1 => "",2 => "",3 => "",4 => "",5 => "",6 => "",7 => ""); $i=0;
 
 	foreach ($students as $student)
@@ -172,7 +162,7 @@ function addStudents($students)
 
 		if($i < 900 && $i > 799)
 		{
-			$Query[4].= "INSERT INTO `students` (`auis_id`, `classes`) VALUES ( '".$student->id."' , '".json_encode($student->classes)."' );";
+			$Query[4].= "INSERT INTO `students` (`id`,`auis_id`, `classes`) VALUES ( null , '".$student->id."' , '".json_encode($student->classes)."' );";
 		}
 
 
@@ -183,7 +173,10 @@ function addStudents($students)
 	foreach ($Query as $SQL)
 	{
 		$result = $this->db->multi_query($SQL);
-		
+		// var_dump($this->db->error);
+		// echo "<hr>";
+		// die($SQL);
+
 		while($this->db->more_results())
 		{
 		    $this->db->next_result();
@@ -193,6 +186,7 @@ function addStudents($students)
 		    }
 		}
 	} 	
+
 	return $result;
 }
 

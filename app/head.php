@@ -1,6 +1,6 @@
   <?php session_start();  ?>
 
-  <title>AUIS Exam Scheduling Application</title>
+  <title>AUIS Exam Schedule</title>
 
   <meta charset='utf-8' />
   <meta name="author" content="Arukh Sediq Shkur">
