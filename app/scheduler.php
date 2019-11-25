@@ -1,20 +1,16 @@
-<html>
+<html lang="en">
 <head> 
   <?php 
 
-    include('head.php');
-    require('main.php'); 
+    require_once('head.php');
+    require_once('main.php'); 
     if(!isset($_SESSION['user_email'])) header('Location: index.php'); 
     
    ?>
 </head>
 <body>
-  <?php include 'navbar.php' ?>
+  <?php require_once 'navbar.php' ?>
   <div id='wrap'>
- 
-
-    <!-- <hr> -->
-    
     <div id='external-events'>
       <h3 style="border-bottom:2px #c99700 solid;">Courses</h3>
       <br>  
@@ -31,9 +27,8 @@
 
       </div>
 
-    </div>
-
-   <br>
+    </div><br>
+    
     <div id="buttons" style="justify-content: center; text-align: center;">
          
     <span >Autocheck?</span>

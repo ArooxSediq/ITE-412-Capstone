@@ -5,8 +5,8 @@ if(empty($_POST['g-recaptcha-response'])) {
 	die();
 }
 
-include 'user.php';
-include 'database.php';
+require_once 'user.php';
+require_once 'database.php';
 
 session_start();
 

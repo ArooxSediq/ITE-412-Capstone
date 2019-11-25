@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 	<?php 
-    include('head.php'); 
+    require_once('head.php'); 
     if(!isset($_SESSION['user_email'])) header('Location: index.php'); 
   ?>
 
 </head>
 <body style="overflow: hidden;">
-  <?php include 'navbar.php'; ?>
+  <?php require_once 'navbar.php'; ?>
 <div class="">
   	
   <div class="col-12" style="justify-content: center; text-align: center; align-items: center; background: #f8f8ff; padding: 5%;">

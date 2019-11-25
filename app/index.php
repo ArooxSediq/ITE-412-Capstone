@@ -1,9 +1,9 @@
-<html>
+<html lang="en">
 <head>
   <?php
   
-      include 'head.php';
-      include 'database.php';
+      require_once 'head.php';
+      require_once 'database.php';
       $DB = new database('public');
       $events = $DB->fetch('events');
       $students = $DB->fetch('students');
@@ -45,7 +45,7 @@
 </head>
 <body>
 
-<?php include('navbar.php'); ?>
+<?php require_once('navbar.php'); ?>
   
   <div id='calendar'></div>
 
