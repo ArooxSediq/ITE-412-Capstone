@@ -19,19 +19,15 @@
   <div class="col-12" style="justify-content: center; text-align: center; align-items: center; background: #232b2b; padding: 5%; padding-bottom: 10%;">
 
   		 <form action="scheduler.php" method="POST" enctype="multipart/form-data">
-  		 	<label for="sonis_data" class="text-white">Please import excel datasheet provided by sonis</label>
-  		 	<hr>
-			<div class="custom-file">
-				
-				<input type="file" class="custom-file-input" name="sonis_data" id="sonis_data">
-				<label class="custom-file-label" for="sonis_data">Choose file</label>
-				<br> <br>
-				<button type="submit" class="btn btn-outline-info btn-block" style="margin: 0;">Import</button>
-
-        <button type="submit" class="btn btn-outline-light btn-block" style="margin: 0;">Skip</button>
-
-			</div>
-		 
+  		      <label for="sonis_data" class="text-white">Please import excel datasheet provided by sonis</label>
+  		 	    <hr>
+      			<div class="custom-file">
+      				<input type="file" class="custom-file-input" name="sonis_data" id="sonis_data">
+      				<label class="custom-file-label" for="sonis_data">Choose file</label>
+      				<br><br>
+      				<button type="submit" class="btn btn-outline-info btn-block" style="margin: 0;">Import</button><br>
+              <button type="submit" class="btn btn-outline-light btn-block" style="margin: 0;">Skip</button>
+      			</div>
 		  </form>
 
 

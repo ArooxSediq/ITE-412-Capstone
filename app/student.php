@@ -11,7 +11,9 @@ class student
 	public $id;
 	public $classes = array();
 
-	function __CONSTRUCT($id) $this->id= $id;
+	function __CONSTRUCT($id){
+		$this->id= $id;	
+	} 
 }
 
  ?>

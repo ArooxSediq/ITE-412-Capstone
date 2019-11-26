@@ -14,10 +14,7 @@ class database
 	private $password = "";
 	private $schema = "exam_schedule";
 
-	function getDB()
-	{
-		return $this->db;
-	}
+	function getDB() { return $this->db; }
 	
 	function __construct($type)
 	{
@@ -44,7 +41,7 @@ class database
 	}
 
 
-	function emptyCalendar() return $this->db->query("TRUNCATE TABLE `events`;");
+	function emptyCalendar() { return $this->db->query("TRUNCATE TABLE `events`;"); }
 
 
 	function fetch($table)
