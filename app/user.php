@@ -1,9 +1,9 @@
-<?php 
+<?php
 
 /**
 *   Author: Arukh Sediq Shkur
 *   Supervisor: Alan Amin
-*   ITE-410 - Capstone   
+*   ITE-410 - Capstone
 **/
 
 class user
@@ -22,13 +22,13 @@ class user
 
 	function create($username,$email,$password){}
 
-	function signOut() { session_destroy(); } 
+	function signOut() { session_destroy(); }
 
 	function signIn($email,$password)
 	{
-		foreach ($this->data as $datum) 
-		{	
-			if($email == $datum['email'] && $password == $datum['password']) 
+		foreach ($this->data as $datum)
+		{
+			if($email == $datum['email'] && $password === $datum['password'])
 				{
 					$_SESSION['user_email']=$email;
 					$_SESSION['user_password']=$password;

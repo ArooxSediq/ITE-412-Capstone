@@ -1,7 +1,7 @@
 <html lang="en">
 <head>
   <?php
-  
+
       require_once 'head.php';
       require_once 'database.php';
       $DB = new database('public');
@@ -11,27 +11,30 @@
       if(isset($_GET['student_id']))
       {
         $found;
-        foreach ($students as $student) {
-          if(ltrim($student['auis_id'],'0')==trim($_GET['student_id'])) 
+        foreach ($students as $student)
+        {
+          if(ltrim($student['auis_id'],'0')==trim($_GET['student_id']))
             {
               $found=$student;
               break;
             }
         }
-       
+
         if(isset($found))
         {
           $studentSchedule=[];
+
           foreach ($events as $event) {
               foreach (json_decode($found['classes']) as $class) {
                 if(trim($event['title'])==trim($class)) array_push($studentSchedule, $event);
               }
           }
-        }
-        
 
-        
-      }
+          setcookie('student_id', $found['auis_id'], time()+86400*30, "/");
+          setcookie('studentSchedule', json_encode($studentSchedule) ,  time()+86400*30 , "/");
+
+        }
+      }//esle if
    ?>
   <style type="text/css">
     #calendar{
@@ -46,8 +49,19 @@
 <body>
 
 <?php require_once('navbar.php'); ?>
-  
+
   <div id='calendar'></div>
+
+  <!-- Cookie Consent by https://www.FreePrivacyPolicy.com -->
+  <script type="text/javascript" src="//www.FreePrivacyPolicy.com/cookie-consent/releases/3.0.0/cookie-consent.js"></script>
+  <script type="text/javascript">
+  document.addEventListener('DOMContentLoaded', function () {
+      cookieconsent.run({"notice_banner_type":"simple","consent_type":"implied","palette":"dark","change_preferences_selector":"#changePreferences","language":"en","website_name":"Exam Schedule"});
+  });
+  </script>
+
+  <noscript>GDPR Cookie Consent by <a href="https://www.freeprivacypolicy.com/">Free Privacy Policy</a></noscript>
+  <!-- End Cookie Consent -->
 
   <script src="js/jquery.js"></script>
   <script src="js/bootstrap.min.js"></script>
@@ -69,12 +83,12 @@
     var Draggable = FullCalendarInteraction.Draggable
 
     var calendarEl = document.getElementById('calendar');
-    
-    calendar = new calendar(calendarEl, 
+
+    calendar = new calendar(calendarEl,
     {
       plugins: [ 'interaction', 'dayGrid', 'timeGrid','list' ],
        defaultView: 'timeGridFourDay',
-       defaultDate: '<?php if(isset($studentSchedule)) echo  substr($studentSchedule[0]['start'],0,10); else echo substr($events[0]['start'], 0,10) ; ?>' ,
+       defaultDate: '<?php if(isset($studentSchedule)) echo  substr($studentSchedule[0]->start,0,10); else echo substr($events[0]['start'], 0,10) ; ?>' ,
         views: {
           timeGridFourDay: {
             type: 'timeGrid',
@@ -92,46 +106,46 @@
         $(info.el).append('<td id=\"fc-location\" style=\"border:none;color:#002855;font-weight:bold;\"> '+info.event.extendedProps.location+'</td>');
       },
       defaultTimedEventDuration: '02:00:00',
-      events: events 
+      events: events
 
     });
     calendar.render();
 
   }); //end Dom Document loaded function
 
-</script>   
+</script>
 
 
 <!-- The following code has been obtained from: -->
 <!-- https://stackoverflow.com/questions/2264072/detect-a-finger-swipe-through-javascript-on-the-iphone-and-android -->
 
   <script>
- 
+
 window.addEventListener('load', function(){
- 
-document.addEventListener('touchstart', handleTouchStart, false);        
+
+document.addEventListener('touchstart', handleTouchStart, false);
 document.addEventListener('touchmove', handleTouchMove, false);
 
-var xDown = null;                                                        
+var xDown = null;
 var yDown = null;
 
 function getTouches(evt) {
   return evt.touches ||             // browser API
          evt.originalEvent.touches; // jQuery
-}                                                     
+}
 
 function handleTouchStart(evt) {
-    const firstTouch = getTouches(evt)[0];                                      
-    xDown = firstTouch.clientX;                                      
-    yDown = firstTouch.clientY;                                      
-};                                                
+    const firstTouch = getTouches(evt)[0];
+    xDown = firstTouch.clientX;
+    yDown = firstTouch.clientY;
+};
 
 function handleTouchMove(evt) {
     if ( ! xDown || ! yDown ) {
         return;
     }
 
-    var xUp = evt.touches[0].clientX;                                    
+    var xUp = evt.touches[0].clientX;
     var yUp = evt.touches[0].clientY;
 
     var xDiff = xDown - xUp;
@@ -142,11 +156,11 @@ function handleTouchMove(evt) {
             calendar.next();
         } else {
             calendar.prev();
-        }                       
+        }
     } else
     /* reset values */
     xDown = null;
-    yDown = null;                                             
+    yDown = null;
 };
 
 }, false) // end window.onload
@@ -157,17 +171,17 @@ function handleTouchMove(evt) {
 <div style="padding-top: 90%; background-color: #002855;">  </div>
 
 <div class="col-12 text-white" id="footer">
-    
+
       <a href="https://auis.edu.krd" style="color: white;"><img src="img/auis.png" width="10%">The American University of Iraq, Slemani</a>
-      
+
       <br><br>
 
-      <p>AUIS Exam Schedule</p> 
+      <p>AUIS Exam Schedule</p>
       <br>
       2019 © <a href="https://www.linkedin.com/in/arukh-s-216181138/">@aroox</a>
-      
+
       <a href="https://github.com/ArooxSediq/ITE-412-Capstone">Github</a>
-      
+
     </div>
 </body>
 </html>
