@@ -32,9 +32,9 @@
       </li>
 
       <li class="nav-item">
-        <?php if(!isset($_COOKIE['student_id'])): ?>
+        <?php //if(!isset($_COOKIE['student_id'])): ?>
            <a class="nav-link" title="Student" data-toggle="modal" data-target="#exampleModal" href="#"><i class="fa fa-graduation-cap"></i></a>
-        <?php endif; ?>
+        <?php// endif; ?>
       </li>
 
       <?php if(!isset($_SESSION['user_email'])): ?>
@@ -71,7 +71,7 @@
       </div>
       <div class="modal-body">
        <form>
-         <input type="text" class="form-control" style="text-align:center;" id="student_id" name="student_id" placeholder="eg: 19-00001 " required>
+         <input type="text" class="form-control" pattern="[0-9]{1,2}-[0-9]{5}" style="text-align:center;" id="student_id" name="student_id" placeholder="eg: 19-00001 " required>
          <br><br>
          <p style="color: rgb(100,100,100);">NOTICE: Please don't forget the hiphen " - " in your auis ID.</p>
       </div>

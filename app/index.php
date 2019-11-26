@@ -4,6 +4,7 @@
 
       require_once 'head.php';
       require_once 'database.php';
+
       $DB = new database('public');
       $events = $DB->fetch('events');
       $students = $DB->fetch('students');
