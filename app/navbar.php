@@ -32,9 +32,9 @@
       </li>
 
       <li class="nav-item">
-        <?php //if(!isset($_COOKIE['student_id'])): ?>
+        <?php if(!isset($_COOKIE['student_id'])): ?>
            <a class="nav-link" title="Student" data-toggle="modal" data-target="#exampleModal" href="#"><i class="fa fa-graduation-cap"></i></a>
-        <?php// endif; ?>
+        <?php endif; ?>
       </li>
 
       <?php if(!isset($_SESSION['user_email'])): ?>
@@ -76,19 +76,20 @@
          <p style="color: rgb(100,100,100);">NOTICE: Please, use this format ( 00-00000 ).</p>
       </div>
       <div class="modal-footer">
-        <style media="screen">
-        .btn-outline-primary {
-          color: #002855 !important;
-          border-color: #002855 !important;
-        }
-      .btn:hover{
-        background-color:  #002855 !important ;
-        color: white !important;
-      }
-        </style>
         <button type="submit" class="btn btm-sm btn-block btn-outline-primary" >Log in</button>
       </div>
         </form>
     </div>
   </div>
 </div>
+
+<style media="screen">
+  .btn-outline-primary {
+    color: #002855 !important;
+    border-color: #002855 !important;
+  }
+  .btn:hover{
+    background-color:  #002855 !important ;
+    color: white !important;
+  }
+</style>
