@@ -73,7 +73,7 @@
        <form>
          <input type="text" class="form-control" pattern="[0-9]{1,2}-[0-9]{5}" style="text-align:center;" id="student_id" name="student_id" placeholder="eg: 19-00001 " required>
          <br><br>
-         <p style="color: rgb(100,100,100);">NOTICE: Please don't forget the hiphen " - " in your auis ID.</p>
+         <p style="color: rgb(100,100,100);">NOTICE: Please, use this format ( 00-00000 ).</p>
       </div>
       <div class="modal-footer">
         <style media="screen">

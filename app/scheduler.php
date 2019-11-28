@@ -49,15 +49,15 @@
 
 
     </div>
-      <br><br>
-    <div id='calendar'>
-      
-    </div>
+    
+    <br><br>
+
+    <div id='calendar'></div>
 
     <div style='clear:both'></div>
 
   </div>
-     <div class="col-12 text-white" style="background: #222c36  ;padding:5%;text-align: center;vertical-align: middle;">
+     <div class="col-12 text-white" style="background:#222c36;padding:5%;text-align:center;vertical-align: middle;">
       
         <a href="https://auis.edu.krd" style="color: white;"><img src="img/auis.png" width="10%">The American University of Iraq, Slemani</a>
         
@@ -83,19 +83,6 @@
   <script src='packages/list/main.js'></script>
   <script type="text/javascript" src="js/calendar.js"></script>
   <script type="text/javascript" src="js/main.js"></script>
-  <script type="text/javascript"> 
-
-      $(document).ready(function(){
-
-        var exams= $(".fc-event");
-
-        for (var i = 0; i <   exams.length; i++) {
-             console.log(exams[i]);      
-        }
-    
-      });
-
-  </script>
   <script type="text/javascript">
 
     var events = <?php echo json_encode($events); ?>;

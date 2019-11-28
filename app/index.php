@@ -38,13 +38,8 @@
       }//esle if
    ?>
   <style type="text/css">
-    #calendar{
-      margin: 5%;
-      width: 90%;
-    }
-    body{
-      background: #222c36;
-    }
+    #calendar{ margin: 5%; width: 90%; }
+    body{ background: #222c36; }
   </style>
 </head>
 <body>
