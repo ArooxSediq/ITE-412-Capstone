@@ -19,7 +19,12 @@
        <span>
          <?php
            if(isset($studentSchedule))
-           foreach ($studentSchedule as $exam)  echo " | ".$exam->title;
+           {
+               foreach ($studentSchedule as $exam){
+                  echo " | ".$exam->title;  
+               } 
+           }
+          
          ?>
        </span>
      </div>

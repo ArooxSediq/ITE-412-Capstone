@@ -1,0 +1,1 @@
+<?php if(isset($_POST)) echo "this is a post request"; else echo "this aint a post request" ?>

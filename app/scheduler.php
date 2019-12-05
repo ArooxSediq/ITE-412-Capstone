@@ -86,6 +86,15 @@
   <script type="text/javascript">
 
     var events = <?php echo json_encode($events); ?>;
+    
+    // var xhr = new XMLHttpRequest();
+    // xhr.open('POST','back-end.php',true);
+    // xhr.onload = function(){
+    //   if(this.status==200)
+    //   {
+    //     var events = this.responseText;
+    //   }
+    // }
 
     function Calculate()
     {
