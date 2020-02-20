@@ -31,8 +31,8 @@
               }
           }
 
-          setcookie('student_id', $found['auis_id'], time()+86400*30, "/");
-          setcookie('studentSchedule', json_encode($studentSchedule) ,  time()+86400*30 , "/");
+          setcookie('student_id', $found['auis_id'], time()+86400, "/");
+          setcookie('studentSchedule', json_encode($studentSchedule) ,  time()+86400 , "/");
 
         }
       }//esle if

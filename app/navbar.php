@@ -78,7 +78,7 @@
        <form>
          <input type="text" class="form-control" pattern="[0-9]{1,2}-[0-9]{5}" style="text-align:center;" id="student_id" name="student_id" placeholder="eg: 19-00001 " required>
          <br><br>
-         <p style="color: rgb(100,100,100);">NOTICE: Please, use this format ( 00-00000 ).</p>
+         <p style="color: rgb(100,100,100);">NOTICE: Please, use this format ( 00-00000 ) and make sure you enter the correct ID, you will not be able to sign out for a period of 24 hours.</p>
       </div>
       <div class="modal-footer">
         <button type="submit" class="btn btm-sm btn-block btn-outline-primary" >Log in</button>
