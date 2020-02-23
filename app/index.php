@@ -75,6 +75,15 @@
   document.addEventListener('DOMContentLoaded', function()
   {
 
+
+    var w = window.innerWidth;
+    var h = window.innerHeight;
+    var cols = 7;
+    if(h>w)
+    {
+      cols = 3;
+    }
+
     calendar = FullCalendar.Calendar;
     var Draggable = FullCalendarInteraction.Draggable
 
@@ -88,7 +97,7 @@
         views: {
           timeGridFourDay: {
             type: 'timeGrid',
-            duration: { days: 7 }
+            duration: { days: cols }
           }
         },
       header: {
