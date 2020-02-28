@@ -188,5 +188,10 @@ function handleTouchMove(evt) {
       <a href="https://github.com/ArooxSediq/ITE-412-Capstone">Github</a>
 
     </div>
+
+        <nav class="navbar fixed-bottom " style=" background: #c99700;" >
+      <?php require_once 'bottom_navbar.php'; ?>
+    </nav>
+    
 </body>
 </html>

@@ -19,12 +19,7 @@
        <span>
          <?php
            if(isset($studentSchedule))
-           {
-               foreach ($studentSchedule as $exam){
-                  echo " | ".$exam->title;  
-               } 
-           }
-          
+           foreach ($studentSchedule as $exam)  echo " | ".$exam->title;
          ?>
        </span>
      </div>
@@ -32,11 +27,11 @@
 
   <div class="navbar" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto" style="  display: inline-flex !important; flex-direction: row !important;">
-      <li class="nav-item">
+      <li class="nav-item lg">
         <a class="nav-link" href="index.php" title="Home" ><i class="fa fa-home"></i> </a>
       </li>
 
-      <li class="nav-item">
+      <li class="nav-item lg">
         <?php if(!isset($_COOKIE['student_id'])): ?>
            <a class="nav-link" title="Student" data-toggle="modal" data-target="#exampleModal" href="#"><i class="fa fa-graduation-cap"></i></a>
         <?php endif; ?>
@@ -44,18 +39,18 @@
 
       <?php if(!isset($_SESSION['user_email'])): ?>
 
-      <li class="nav-item">
+      <li class="nav-item lg">
         <a class="nav-link" title="Log in" href="login.php"><i class="fa fa-sign-in"></i></a>
       </li>
 
       <?php else: ?>
 
-      <li class="nav-item">
+      <li class="nav-item ">
         <a class="nav-link" href="scheduler.php" title="Scheduler" ><i class=" fa fa-calendar"></i></a>
         <span></span>
       </li>
 
-      <li class="nav-item">
+      <li class="nav-item ">
         <a class="nav-link " href="login.php?signout=true" title="Log out" ><i class=" fa fa-lock"></i></a>
         <span></span>
       </li>
@@ -69,7 +64,7 @@
 
 <div class="modal fade"  id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
-    <div class="modal-content" style="background: rgba(255,255,255,0.75);">
+    <div class="modal-content" style="height:75%;width: 175%;right: 200; background: rgba(255,255,255,0.75);">
       <div class="modal-header" style="display:block; text-align:center;">
         <h5 class="modal-title" id="exampleModalLabel">Student ID</h5>
 
@@ -78,10 +73,10 @@
        <form>
          <input type="text" class="form-control" pattern="[0-9]{1,2}-[0-9]{5}" style="text-align:center;" id="student_id" name="student_id" placeholder="eg: 19-00001 " required>
          <br><br>
-         <p style="color: rgb(100,100,100);">NOTICE: Please, use this format ( 00-00000 ) and make sure you enter the correct ID, you will not be able to sign out for a period of 24 hours.</p>
+         <p class="myp" style="color: rgb(100,100,100);">NOTICE: Please, use this format ( 00-00000 ).</p>
       </div>
       <div class="modal-footer">
-        <button type="submit" class="btn btm-sm btn-block btn-outline-primary" >Log in</button>
+        <button type="submit" class="btn btm-sm btn-block btn-outline-primary" style="font-size: 30pt;" >Log in</button>
       </div>
         </form>
     </div>

@@ -183,3 +183,91 @@
     color: white;
   }
 
+
+
+
+
+
+
+
+
+.main-hr {
+  width: 30%;
+  border: none;
+  border-top: 1px solid #c3c3c3;
+}
+.icon-btn {
+  width: 100px;
+  height: 100px;
+  border:none;
+  background: none;
+  overflow: hidden;
+  position: relative;
+  transition: width 0.2s ease-in-out;
+}
+.add-btn:hover {
+  width: 120px;
+}
+.add-btn::before,
+.add-btn::after {
+  transition: width 0.2s  ease-in-out;
+  content: "";
+  position: absolute;
+  height: 4px;
+  width: 10px;
+  top: calc(50% - 2px);
+  background: none;
+}
+.add-btn::after {
+  right: 14px;
+  overflow: hidden;
+
+}
+.add-btn::before {
+  left: 14px;
+ 
+}
+.icon-btn:focus {
+  outline: none;
+}
+.btn-txt {
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+.add-btn:hover::before,
+.add-btn:hover::after {
+  width: 4px;
+ 
+}
+.add-btn:hover .btn-txt {
+  opacity: 1;
+}
+.add-icon::after,
+.add-icon::before {
+  transition: all 0.2s ease-in-out;
+  content: "";
+  position: absolute;
+  height: 20px;
+  width: 2px;
+  top: calc(50% - 10px);
+  background: red;
+  overflow: hidden;
+}
+.add-icon::before {
+  left: 22px;
+ 
+}
+.add-icon::after {
+  right: 22px;
+ 
+}
+.add-btn:hover .add-icon::before {
+  left: 15px;
+  height: 4px;
+  top: calc(50% - 2px);
+}
+.add-btn:hover .add-icon::after {
+  right: 15px;
+  height: 4px;
+  top: calc(50% - 2px);
+}
